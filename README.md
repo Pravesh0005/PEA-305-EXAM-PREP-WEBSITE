@@ -22,7 +22,7 @@
 <br/><br/>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=22C55E&center=true&vCenter=true&multiline=true&width=1000&height=140&lines=Professional+Aptitude+Preparation+Platform+🧠;100%2B+MCQs+with+Exam-Focused+Practice+⚡;Vedic+Maths+%7C+Percentages+%7C+P%26L+%7C+Series+📚;Built+to+Boost+Speed%2C+Accuracy+and+Confidence+🎯" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=22C55E&center=true&vCenter=true&repeat=true&width=1000&height=100&lines=Professional+Aptitude+Preparation+Platform+🧠;100%2B+MCQs+with+Exam-Focused+Practice+⚡;Vedic+Maths+%7C+Percentages+%7C+P%26L+%7C+Series+📚;Built+to+Boost+Speed%2C+Accuracy+and+Confidence+🎯" />
 </p>
 
 <br/>
