@@ -61,13 +61,13 @@
 
 ```bash
 # One step. That's it.
-double-click PEA305_Aptitude_ExamPrep.html
+double-click pea305.html
 
 # macOS
-open PEA305_Aptitude_ExamPrep.html
+open pea305.html
 
 # Windows
-start PEA305_Aptitude_ExamPrep.html
+start pea305.html
 ```
 
 > ⚡ **Works offline. No setup. No login. No subscription.**
@@ -324,7 +324,7 @@ Size:       Single file ~160KB
 ```
 PEA305-Aptitude-ExamPrep/
 │
-├── 📄 PEA305_Aptitude_ExamPrep.html   ← Main file (open this!)
+├── 📄 pea305.html   ← Main file (open this!)
 │
 ├── 📂 source-materials/
 │   ├── ppts/
@@ -350,9 +350,9 @@ PEA305-Aptitude-ExamPrep/
 Found a wrong explanation? Have more shortcuts? PRs welcome!
 
 ```bash
-git fork https://github.com/yourusername/PEA305-Aptitude-ExamPrep
+git fork https://github.com/Pravesh0005/PEA-305-EXAM-PREP-WEBSITE
 git checkout -b feat/add-ratio-proportion
-# Make changes to PEA305_Aptitude_ExamPrep.html
+# Make changes to pea305.html
 git commit -m "feat: Add Ratio & Proportion shortcuts + 10 MCQs"
 git push origin feat/add-ratio-proportion
 # Open Pull Request
