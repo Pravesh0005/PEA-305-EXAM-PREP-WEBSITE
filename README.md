@@ -322,25 +322,27 @@ Size:       Single file ~160KB
 ## 📁 File Structure
 
 ```
-PEA305-Aptitude-ExamPrep/
-│
-├── 📄 pea305.html   ← Main file (open this!)
+📂 PEA305-Aptitude-ExamPrep/
 │
 ├── 📂 source-materials/
-│   ├── ppts/
-│   │   ├── Vedic Maths.pptx
-│   │   ├── Number System.pptx
-│   │   ├── Average.pptx
-│   │   ├── Percentage.pptx
-│   │   ├── Profit Loss.pptx
-│   │   ├── Logical Reasoning.pptx
-│   │   ├── Series.pptx
-│   │   ├── Coding Decoding.pptx
-│   │   └── HCF LCM.pptx
-│   └── other/
-│       └── pea305 (2).pdf
+│   ├── 📂 ppts/
+│   │   ├── 📄 Vedic Maths ppt
+│   │   ├── 📄 Number System ppt
+│   │   ├── 📄 Average ppt
+│   │   ├── 📄 Percentage ppt
+│   │   ├── 📄 Profit Loss ppt
+│   │   ├── 📄 Logical Reasoning ppt
+│   │   ├── 📄 Series ppt
+│   │   ├── 📄 Coding Decoding ppt
+│   │   └── 📄 HCF LCM ppt
+│   └── 📂 other/
+│       └── 📄 PEA305-SYLLABUS.pdf
+|
+├── 📄 LICENSE
+|
+├── 📄 README.md          ← You are here
 │
-└── 📄 README.md                        ← You are here
+└── 📄 pea305.html        ← Main file (open this!)
 ```
 
 ---
