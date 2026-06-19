@@ -51,6 +51,7 @@
 - [💡 High-Yield Formulas](#-high-yield-formulas)
 - [⚠️ Critical Traps](#️-critical-traps)
 - [🎯 Exam Strategy](#-exam-strategy)
+- [🌐 Live Demo](#-live-demo)
 - [🛠 Tech Stack](#-tech-stack)
 - [📁 File Structure](#-file-structure)
 - [🤝 Contributing](#-contributing)
@@ -305,6 +306,56 @@ CUBE ROOT (6-dig): Last digit→unit, truncate last 3→tens
 | HCF same-rem | HCF of differences | NOT of numbers |
 
 ---
+
+## 🌐 Live Demo
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=90&section=header&text=LIVE%20DEMO&fontSize=34&fontColor=ffffff&animation=twinkling" width="100%"/>
+
+<br>
+
+### 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
+
+# 🚀 [OPEN PEA305 APTITUDE PREP](https://pea-305.netlify.app/)
+
+### 👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆
+
+<br>
+
+<a href="https://pea-305.netlify.app/">
+  <img src="https://img.shields.io/badge/✨_CLICK_TO_START_THE_EXPERIENCE-PEA305_APTITUDE_PREP-00C853?style=for-the-badge&logo=netlify&logoColor=white" alt="Open Live Demo"/>
+</a>
+
+<br><br>
+
+**One click | Unlimited practice | Zero setup.**
+
+**Built for speed, accuracy and aptitude mastery.**
+
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1000&color=00C853&center=true&vCenter=true&width=900&lines=100%2B+Exam+Focused+MCQs;Vedic+Maths+and+Calculation+Shortcuts;Percentages+Profit+Loss+Ratio+Series;Coding+Decoding+Logical+Reasoning;High+Yield+PEA305+Revision;Built+for+Placement+and+Exam+Preparation" alt="Typing SVG" />
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=70&section=footer" width="100%"/>
+
+</div>
+
+---
+
+### ✨ What You Can Explore
+
+- 🧠 Vedic Maths shortcuts
+- ⚡ Speed calculation techniques
+- 📚 PPT-based revision notes
+- ❓ 100+ aptitude MCQs
+- 🎯 Exam-focused practice sets
+- 📈 Profit & Loss, Percentages, Ratio-Proportion
+- 🔢 Number System, HCF & LCM
+- 🧩 Coding-Decoding & Logical Reasoning
+- 🚀 Placement and aptitude preparation
 
 ## 🛠 Tech Stack
 
