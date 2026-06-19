@@ -391,7 +391,7 @@ Size:       Single file ~160KB
 │   │   └── 📄 HCF LCM Materials
 |   |
 |   |
-│   └── 📂 other/
+│   └── 📂 syllabus/
 │       └── 📄 PEA305-SYLLABUS.pdf
 |
 ├── 📄 LICENSE
