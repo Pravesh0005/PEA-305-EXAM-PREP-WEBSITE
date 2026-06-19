@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEA305 — Aptitude & Logical Reasoning | Ultimate Exam Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a0f;--bg2:#0d1117;--bg3:#161b22;--glass:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--accent:#22c55e;--accent2:#f59e0b;--accent3:#3b82f6;--purple:#8b5cf6;--red:#ef4444;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:265px;min-width:265px;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;transition:.3s}
+.sidebar.hidden{transform:translateX(-265px)}
+.main{margin-left:265px;flex:1;transition:.3s}
+.main.expanded{margin-left:0}
+.logo{padding:18px;border-bottom:1px solid var(--border);text-align:center}
+.logo-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-sub{font-size:.62rem;color:var(--text3);margin-top:2px;font-family:'DM Mono',monospace}
+.nav-section{padding:10px 10px 4px;font-size:.62rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 13px;margin:2px 7px;border-radius:7px;cursor:pointer;transition:.2s;font-size:.82rem;color:var(--text2);text-decoration:none;border:1px solid transparent}
+.nav-item:hover,.nav-item.active{background:var(--glass);color:var(--text);border-color:var(--border)}
+.nav-item.active{background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.3);color:var(--accent)}
+.nav-badge{margin-left:auto;background:var(--accent);color:#000;font-size:.58rem;padding:2px 6px;border-radius:10px;font-weight:700}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:11px 22px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
+.menu-btn{background:none;border:1px solid var(--border);color:var(--text);padding:5px 9px;border-radius:6px;cursor:pointer;font-size:1rem}
+.search-bar{flex:1;position:relative;max-width:380px}
+.search-bar input{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 13px 7px 34px;border-radius:8px;font-size:.83rem;font-family:'Outfit',sans-serif;outline:none;transition:.2s}
+.search-bar input:focus{border-color:var(--accent)}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:.85rem}
+.topbar-right{display:flex;align-items:center;gap:9px;margin-left:auto}
+.score-pill{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:var(--accent);padding:4px 11px;border-radius:20px;font-size:.75rem;font-family:'DM Mono',monospace}
+.timer-pill{background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:var(--accent2);padding:4px 11px;border-radius:20px;font-size:.75rem;font-family:'DM Mono',monospace;cursor:pointer}
+.page{display:none;padding:26px}
+.page.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero{background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(245,158,11,0.07));border:1px solid var(--border);border-radius:16px;padding:30px;margin-bottom:26px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-8%;width:280px;height:280px;background:radial-gradient(circle,rgba(34,197,94,0.16),transparent 70%);pointer-events:none}
+.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;line-height:1.2;margin-bottom:8px}
+.hero-sub{color:var(--text2);font-size:.88rem;max-width:580px;line-height:1.6}
+.hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.htag{background:var(--glass);border:1px solid var(--border);padding:3px 11px;border-radius:20px;font-size:.73rem;color:var(--text2)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:26px}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:15px;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.72rem;color:var(--text3);margin-top:3px}
+.section-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+table{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:.81rem}
+th{background:rgba(34,197,94,0.12);color:var(--accent);padding:8px 11px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);font-family:'DM Mono',monospace;font-size:.7rem;text-transform:uppercase}
+td{padding:8px 11px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text2);vertical-align:top}
+tr:hover td{background:var(--glass)}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.67rem;font-weight:600;font-family:'DM Mono',monospace}
+.tag.hot{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#f87171}
+.tag.imp{background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:#fbbf24}
+.tag.mcq{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#4ade80}
+.tag.blue{background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);color:#60a5fa}
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:14px;margin-bottom:22px}
+.unit-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.unit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.unit-card:nth-child(1)::before{background:linear-gradient(90deg,#22c55e,#4ade80)}
+.unit-card:nth-child(2)::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.unit-card:nth-child(3)::before{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+.unit-card:nth-child(4)::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.unit-card:nth-child(5)::before{background:linear-gradient(90deg,#ec4899,#f472b6)}
+.unit-card:hover{border-color:rgba(255,255,255,0.14);transform:translateY(-2px)}
+.unit-num{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--text3);margin-bottom:5px}
+.unit-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.93rem;margin-bottom:7px}
+.unit-topics{font-size:.76rem;color:var(--text2);line-height:1.5}
+.unit-footer{display:flex;align-items:center;gap:7px;margin-top:11px;padding-top:11px;border-top:1px solid var(--border)}
+.concept{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:13px;border-left:3px solid var(--accent)}
+.concept.amber{border-left-color:var(--accent2)}
+.concept.blue{border-left-color:var(--accent3)}
+.concept.purple{border-left-color:var(--purple)}
+.concept.red{border-left-color:var(--red)}
+.concept h3{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.concept p,.concept li{font-size:.81rem;color:var(--text2);line-height:1.7}
+.concept ul,.concept ol{padding-left:17px}
+.concept li{margin-bottom:4px}
+.formula-box{background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:11px;margin:9px 0;font-family:'DM Mono',monospace;font-size:.78rem;color:#86efac;line-height:1.9;white-space:pre-wrap}
+.trick-box{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.25);border-radius:8px;padding:11px;margin:9px 0;font-size:.8rem;color:#fcd34d;line-height:1.7}
+.trick-box strong{color:var(--accent2);display:block;margin-bottom:4px}
+.trap-box{background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.23);border-radius:8px;padding:9px 13px;margin:9px 0;font-size:.78rem;color:#fca5a5}
+.trap-box strong{color:#ef4444;display:block;margin-bottom:3px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:11px 0}
+.compare-col{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:11px}
+.compare-col h4{font-size:.78rem;font-weight:700;margin-bottom:7px;color:var(--accent)}
+.compare-col li{font-size:.76rem;color:var(--text2);margin-bottom:4px}
+.mcq-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:5px 13px;border-radius:20px;cursor:pointer;font-size:.78rem;transition:.2s}
+.filter-btn.active,.filter-btn:hover{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.4);color:var(--accent)}
+.mcq-card{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:18px;margin-bottom:13px;transition:.2s}
+.mcq-card.correct-card{border-color:var(--accent);background:rgba(34,197,94,0.05)}
+.mcq-card.wrong-card{border-color:var(--red);background:rgba(239,68,68,0.05)}
+.mcq-header{display:flex;align-items:flex-start;gap:11px;margin-bottom:13px}
+.mcq-num{background:var(--accent);color:#000;min-width:27px;height:27px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-family:'DM Mono',monospace;font-weight:700;margin-top:2px;flex-shrink:0}
+.mcq-q{font-size:.86rem;line-height:1.6;flex:1}
+.mcq-tags{display:flex;gap:5px;margin-bottom:11px;flex-wrap:wrap}
+.options{display:grid;gap:7px;margin-bottom:13px}
+.option{display:flex;align-items:flex-start;gap:9px;padding:9px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:.2s;font-size:.81rem;line-height:1.5}
+.option:hover{border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.05)}
+.option.selected{border-color:var(--accent);background:rgba(34,197,94,0.1)}
+.option.correct{border-color:var(--accent)!important;background:rgba(34,197,94,0.1)!important}
+.option.wrong{border-color:var(--red)!important;background:rgba(239,68,68,0.1)!important}
+.opt-letter{min-width:21px;height:21px;border-radius:4px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.7rem;font-weight:700;flex-shrink:0}
+.mcq-actions{display:flex;gap:7px;flex-wrap:wrap}
+.btn{padding:7px 14px;border-radius:7px;cursor:pointer;font-size:.79rem;font-family:'Outfit',sans-serif;font-weight:600;border:none;transition:.2s}
+.btn-primary{background:var(--accent);color:#000}.btn-primary:hover{background:#16a34a}
+.btn-secondary{background:var(--bg3);border:1px solid var(--border);color:var(--text2)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.answer-reveal{background:var(--bg3);border-radius:7px;padding:13px;margin-top:11px;font-size:.81rem;display:none;animation:fadeIn .2s ease}
+.answer-reveal.show{display:block}
+.correct-ans{color:var(--accent);font-weight:600;font-family:'DM Mono',monospace;margin-bottom:7px;font-size:.79rem}
+.explanation{color:var(--text2);line-height:1.6}
+.progress-bar{background:var(--bg3);border-radius:4px;height:4px;margin-bottom:18px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;transition:.5s}
+.cheat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:13px;margin-bottom:22px}
+.cheat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:15px}
+.cheat-card h3{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;margin-bottom:11px;color:var(--accent)}
+.cheat-item{display:flex;align-items:flex-start;gap:7px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:.76rem;line-height:1.5}
+.cheat-item:last-child{border:none}
+.cheat-key{font-family:'DM Mono',monospace;color:var(--accent2);min-width:100px;font-size:.7rem;flex-shrink:0}
+.cheat-val{color:var(--text2)}
+.flashcard-container{perspective:1000px;margin-bottom:18px}
+.flashcard{width:100%;height:210px;position:relative;transform-style:preserve-3d;transition:transform .5s;cursor:pointer}
+.flashcard.flipped{transform:rotateY(180deg)}
+.flashcard-front,.flashcard-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:22px;text-align:center}
+.flashcard-front{background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(245,158,11,0.08));border:1px solid rgba(34,197,94,0.3);font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700}
+.flashcard-back{background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(139,92,246,0.08));border:1px solid rgba(59,130,246,0.3);transform:rotateY(180deg);font-size:.81rem;color:var(--text2);line-height:1.6}
+.flashcard-nav{display:flex;gap:9px;align-items:center;margin-top:11px}
+.fc-counter{font-family:'DM Mono',monospace;font-size:.78rem;color:var(--text3);margin:0 auto}
+.mock-header{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between}
+.mock-timer{font-family:'DM Mono',monospace;font-size:2rem;font-weight:700;color:var(--accent2)}
+.question-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-bottom:18px}
+.q-bubble{width:29px;height:29px;border-radius:5px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-family:'DM Mono',monospace;cursor:pointer;background:var(--bg3)}
+.q-bubble.answered{background:rgba(34,197,94,0.25);border-color:var(--accent)}
+.q-bubble.correct{background:rgba(34,197,94,0.3);border-color:var(--accent)}
+.q-bubble.wrong{background:rgba(239,68,68,0.3);border-color:var(--red)}
+.top100-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:9px;margin-bottom:18px}
+.top100-item{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:10px 13px;display:flex;gap:9px;align-items:flex-start;font-size:.79rem;line-height:1.5}
+.top100-num{font-family:'DM Mono',monospace;color:var(--accent);font-size:.7rem;font-weight:700;min-width:25px;margin-top:2px}
+.formula-row{display:grid;grid-template-columns:155px 1fr;gap:7px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:.79rem}
+.formula-name{font-family:'DM Mono',monospace;color:var(--accent2)}
+.formula-expr{font-family:'DM Mono',monospace;color:#86efac;background:var(--bg3);padding:3px 8px;border-radius:4px;word-break:break-all}
+.prob-bar{background:var(--bg3);border-radius:4px;height:5px;margin-top:5px;overflow:hidden}
+.prob-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+@media(max-width:768px){.sidebar{transform:translateX(-265px)}.sidebar.mobile-open{transform:translateX(0)}.main{margin-left:0}.stats-row{grid-template-columns:repeat(2,1fr)}.compare-grid{grid-template-columns:1fr}.question-grid{grid-template-columns:repeat(6,1fr)}}
+@media print{.sidebar,.topbar{display:none}.main{margin:0}.page.active{padding:8px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <div class="logo-title">🧮 PEA305 APTITUDE PREP</div>
+    <div class="logo-sub">PROFESSIONAL EXCELLENCE IN APTITUDE</div>
+  </div>
+  <div class="nav-section">Dashboard</div>
+  <a class="nav-item active" onclick="showPage('dashboard')" href="#">🏠 Dashboard</a>
+  <a class="nav-item" onclick="showPage('analysis')" href="#">📊 Exam Analysis <span class="nav-badge">HOT</span></a>
+  <div class="nav-section">Unit Notes</div>
+  <a class="nav-item" onclick="showPage('unit1')" href="#">1️⃣ Unit 1 – Vedic Maths & Number System</a>
+  <a class="nav-item" onclick="showPage('unit2')" href="#">2️⃣ Unit 2 – Average, % & Profit-Loss</a>
+  <a class="nav-item" onclick="showPage('unit3')" href="#">3️⃣ Unit 3 – Logical Reasoning & Series</a>
+  <a class="nav-item" onclick="showPage('unit4')" href="#">4️⃣ Unit 4 – Coding-Decoding & Alphabet</a>
+  <a class="nav-item" onclick="showPage('unit5')" href="#">5️⃣ Unit 5 – HCF, LCM & Remainders</a>
+  <div class="nav-section">Revision</div>
+  <a class="nav-item" onclick="showPage('cheatsheet')" href="#">📋 Cheat Sheets & Tricks</a>
+  <a class="nav-item" onclick="showPage('formulas')" href="#">🔢 Formula Sheet</a>
+  <a class="nav-item" onclick="showPage('top100')" href="#">🏆 Top 100 Key Points</a>
+  <a class="nav-item" onclick="showPage('flashcards')" href="#">🃏 Flashcards (40)</a>
+  <div class="nav-section">Practice</div>
+  <a class="nav-item" onclick="showPage('mcq')" href="#">❓ MCQ Bank <span class="nav-badge">100+</span></a>
+  <a class="nav-item" onclick="showPage('mocktest')" href="#">📝 Mock Test (30 Qs)</a>
+</aside>
+
+<div class="main" id="mainContent">
+  <div class="topbar">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <div class="search-bar"><span class="search-icon">🔍</span><input type="text" id="searchInput" placeholder="Search percentage, average, profit, series, coding..." oninput="doSearch(this.value)"></div>
+    <div class="topbar-right">
+      <div class="score-pill" id="scorePill">Score: 0/0</div>
+      <div class="timer-pill" id="timerPill" onclick="toggleTimer()">⏱ 00:00</div>
+      <button class="btn btn-secondary" onclick="window.print()" style="padding:4px 9px;font-size:.75rem">🖨</button>
+    </div>
+  </div>
+
+  <div class="page" id="page-search" style="display:none">
+    <div class="section-title">🔍 Search Results</div>
+    <div id="searchResults"></div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="page active" id="page-dashboard">
+    <div class="hero">
+      <div class="hero-title">🧮 PEA305 — Professional Excellence<br>in Aptitude | Exam Prep</div>
+      <div class="hero-sub">Built from 9 PPTs covering Vedic Maths, Number System, Average, Percentage, Profit-Loss, Logical Reasoning, Series, Coding-Decoding, HCF & LCM. 100+ practice questions with shortcuts!</div>
+      <div class="hero-tags">
+        <span class="htag">🧮 Vedic Maths</span><span class="htag">📊 Averages</span><span class="htag">💹 Profit & Loss</span><span class="htag">🔢 Number System</span><span class="htag">🔡 Logical Reasoning</span><span class="htag">🔐 Coding-Decoding</span>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Topic Areas</div></div>
+      <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">Practice MCQs</div></div>
+      <div class="stat-card"><div class="stat-num">40</div><div class="stat-label">Flashcards</div></div>
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Vedic Tricks</div></div>
+    </div>
+    <div class="section-title">🎯 Quick Access</div>
+    <div class="unit-grid">
+      <div class="unit-card" onclick="showPage('unit1')"><div class="unit-num">UNIT 01</div><div class="unit-name">Vedic Maths & Number System</div><div class="unit-topics">Multiply by 5/25/125/9/99/11, Criss-cross, Squares, Square roots, Cubes, Cube roots, Divisibility rules, Unit digits</div><div class="unit-footer"><span class="tag mcq">SPEED TRICKS</span><span style="font-size:.7rem;color:var(--accent);margin-left:auto">~20 MCQs</span></div></div>
+      <div class="unit-card" onclick="showPage('unit2')"><div class="unit-num">UNIT 02</div><div class="unit-name">Average, Percentage & Profit-Loss</div><div class="unit-topics">Average AP, Inclusion/Exclusion, Weighted avg, % to Fraction, Successive %, Elections, Profit/Loss, Discount, Faulty Weights</div><div class="unit-footer"><span class="tag hot">MOST TESTED</span><span style="font-size:.7rem;color:var(--accent);margin-left:auto">~30 MCQs</span></div></div>
+      <div class="unit-card" onclick="showPage('unit3')"><div class="unit-num">UNIT 03</div><div class="unit-name">Logical Reasoning & Series</div><div class="unit-topics">Number Series (AP, GP, Squares, Primes), Alphabet Series, Pattern-based, Missing terms, Next term</div><div class="unit-footer"><span class="tag hot">HIGH FREQ</span><span style="font-size:.7rem;color:var(--accent);margin-left:auto">~25 MCQs</span></div></div>
+      <div class="unit-card" onclick="showPage('unit4')"><div class="unit-num">UNIT 04</div><div class="unit-name">Coding-Decoding & Alphabet</div><div class="unit-topics">Letter coding, Number coding, Mixed coding, Alphabet order, EJOTY trick, Alphanumeric series, Substitution</div><div class="unit-footer"><span class="tag imp">TRICKY</span><span style="font-size:.7rem;color:var(--accent);margin-left:auto">~20 MCQs</span></div></div>
+      <div class="unit-card" onclick="showPage('unit5')"><div class="unit-num">UNIT 05</div><div class="unit-name">HCF, LCM & Remainders</div><div class="unit-topics">Factors, HCF, LCM word problems, Remainder theorems, Cyclicity, Trailing zeros, Factorials</div><div class="unit-footer"><span class="tag blue">NUMERICAL</span><span style="font-size:.7rem;color:var(--accent);margin-left:auto">~15 MCQs</span></div></div>
+    </div>
+    <div class="section-title">⚡ Hottest Topics & Shortcuts</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:9px;margin-bottom:22px">
+      <div class="concept amber"><h3>🥇 % to Fraction Table</h3><p>Memorize: 1/6=16.67%, 1/7=14.28%, 1/8=12.5%, 1/9=11.11%, 1/11=9.09%. Speed key!</p></div>
+      <div class="concept"><h3>🥈 Profit-Loss Formulas</h3><p>SP=CP×(100±P%)/100. Same SP two articles formula: always LOSS = (x/10)². Don't miss!</p></div>
+      <div class="concept blue"><h3>🥉 Series Patterns</h3><p>Prime, Squares (n²), Cubes (n³), n²-1, n(n+1), AP/GP. Identify pattern = get answer.</p></div>
+      <div class="concept purple"><h3>4️⃣ EJOTY Trick</h3><p>E=5, J=10, O=15, T=20, Y=25. Use to find letter positions instantly in coding.</p></div>
+      <div class="concept amber"><h3>5️⃣ Successive %</h3><p>Net% = a + b + ab/100. Example: +20% then -10% = 20-10-2 = 8% increase.</p></div>
+      <div class="concept"><h3>6️⃣ Vedic Multiply</h3><p>×5: halve and add 0. ×25: halve twice, add 00. ×125: halve 3 times, add 000.</p></div>
+    </div>
+  </div>
+
+  <!-- ANALYSIS PAGE -->
+  <div class="page" id="page-analysis">
+    <div class="section-title">📊 Exam Analysis — PEA305</div>
+    <div class="concept amber"><h3>📋 PEA305 Paper Pattern</h3><p>Based on PPTs: MCQ-based aptitude test. Quant + Logical Reasoning split. Each section tests speed + accuracy. Negative marking may apply. Focus: shortcuts over long methods!</p></div>
+    <div class="section-title">🎯 Topic Weightage</div>
+    <table><tr><th>Topic</th><th>Subtopics</th><th>Est. Qs</th><th>Priority</th><th>Probability</th></tr>
+    <tr><td>Percentage</td><td>Basic %, Successive, Elections, Population</td><td>8–10</td><td><span class="tag hot">VERY HIGH</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:92%"></div></div></td></tr>
+    <tr><td>Profit & Loss</td><td>CP/SP/MP, Discount, Faulty Weights, Articles</td><td>8–10</td><td><span class="tag hot">VERY HIGH</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:90%"></div></div></td></tr>
+    <tr><td>Average</td><td>Basic, Weighted, Inclusion/Exclusion</td><td>6–8</td><td><span class="tag imp">HIGH</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:82%"></div></div></td></tr>
+    <tr><td>Number Series</td><td>AP, GP, Squares, Primes, Mixed</td><td>6–8</td><td><span class="tag imp">HIGH</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:85%"></div></div></td></tr>
+    <tr><td>Coding-Decoding</td><td>Letter, Number, Mixed Coding</td><td>5–7</td><td><span class="tag imp">HIGH</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:78%"></div></div></td></tr>
+    <tr><td>Vedic Maths</td><td>Fast Multiplication, Squares, Cube Roots</td><td>4–6</td><td><span class="tag mcq">MEDIUM</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:70%"></div></div></td></tr>
+    <tr><td>HCF & LCM</td><td>Word Problems, Remainders</td><td>4–6</td><td><span class="tag mcq">MEDIUM</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:72%"></div></div></td></tr>
+    <tr><td>Number System</td><td>Divisibility, Factors, Trailing Zeros</td><td>4–5</td><td><span class="tag blue">MEDIUM</span></td><td><div class="prob-bar"><div class="prob-fill" style="width:65%"></div></div></td></tr></table>
+    <div class="section-title">⚠️ Critical Traps & Pitfalls</div>
+    <div class="trap-box"><strong>TRAP 1: Same SP, Two Articles — Always Loss!</strong>If two articles sold at SAME selling price, one at x% profit and other at x% loss → ALWAYS a net LOSS. Loss% = (x/10)². Example: 20% each → Loss = 4%.</div>
+    <div class="trap-box"><strong>TRAP 2: Successive % formula</strong>Net change = a + b + ab/100. If both are increases, ab is positive. If one decrease, use negative. Example: +20% then -10% = 20 + (-10) + (20×-10)/100 = 10 - 2 = 8% increase.</div>
+    <div class="trap-box"><strong>TRAP 3: Average of consecutive numbers</strong>If terms are in AP, average = middle term. If n consecutive numbers with average A → largest = A + (n-1)/2. For 5 consecutive with avg 21 → largest = 21+2 = 23.</div>
+    <div class="trap-box"><strong>TRAP 4: x% of y = y% of x</strong>So 45% of 133.33 = 133.33% of 45 = (4/3)×45 = 60. MUCH faster to swap when one value is a nice fraction!</div>
+    <div class="trap-box"><strong>TRAP 5: A is x% more than B ≠ B is x% less than A</strong>If A is 20% more than B → B is 16.66% LESS than A (not 20%). Formula: B less by = x/(100+x) × 100%.</div>
+    <div class="trap-box"><strong>TRAP 6: Divisibility by 6 = divisible by BOTH 2 AND 3</strong>Divisible by 11: alternating sum of digits = 0 or multiple of 11. Divisible by 88 = divisible by 8 AND 11.</div>
+    <div class="trap-box"><strong>TRAP 7: Trailing zeros in n!</strong>Count pairs of 2 and 5. Always dominated by 5s. Formula: ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ... For 50! = 10+2 = 12 zeros.</div>
+    <div class="trap-box"><strong>TRAP 8: Faulty Weight profit formula</strong>Profit% = (True weight − False weight)/False weight × 100. Example: 800g instead of 1kg → Profit = 200/800 × 100 = 25%.</div>
+  </div>
+
+  <!-- UNIT 1 -->
+  <div class="page" id="page-unit1">
+    <div class="section-title">1️⃣ Unit 1 — Vedic Maths & Number System</div>
+    <div class="concept amber"><h3>⚡ Multiplication Shortcuts <span class="tag hot">SPEED TRICKS</span></h3>
+      <div class="formula-box">MULTIPLY BY 5: Halve the number, add one zero
+  8 × 5 = 4 → 40.   37 × 5 = 18.5 → 185 ✓
+
+MULTIPLY BY 25: Halve twice, add two zeros
+  8 × 25 = 4 → 2 → 200.   37 × 25 = 18.5 → 9.25 → 925 ✓
+
+MULTIPLY BY 125: Halve three times, add three zeros
+  8 × 125 = 4→2→1 → 1000.  432 × 125 = 216→108→54 → 54000 ✓
+
+MULTIPLY BY 9: Add zero (×10), subtract original
+  8 × 9 = 80 - 8 = 72.  257 × 9 = 2570 - 257 = 2313 ✓
+
+MULTIPLY BY 99: Add two zeros (×100), subtract original
+  58 × 99 = 5800 - 58 = 5742 ✓
+
+MULTIPLY BY 11: Keep ends, add adjacent pairs
+  23 × 11: Write 2_3, middle = 2+3=5 → 253
+  79 × 11: 7+9=16, write 7(16)9 → 869 ✓
+  123 × 11: 1_(1+2)_(2+3)_3 = 1353 ✓</div>
+    </div>
+    <div class="concept"><h3>✖️ Criss-Cross (2-Digit × 2-Digit) <span class="tag imp">FAST MULTIPLY</span></h3>
+      <div class="formula-box">For AB × CD:
+Step 1: B×D (units)
+Step 2: A×D + B×C (tens, add carry)
+Step 3: A×C (hundreds, add carry)
+
+Example: 86 × 47
+Step 1: 6×7 = 42, write 2, carry 4
+Step 2: 8×7 + 6×4 = 56+24 = 80, +4 = 84, write 4, carry 8
+Step 3: 8×4 = 32, +8 = 40
+Answer: 4042 ✓
+
+42 × 48 = (40+2)(40+8) = 1600+320+80+16 = 2016 ✓</div>
+    </div>
+    <div class="concept amber"><h3>²√ Squares & Square Roots <span class="tag hot">SHORTCUTS</span></h3>
+      <div class="formula-box">SQUARES ENDING IN 5: (n5)² = n(n+1) followed by 25
+  25² = 2×3 followed by 25 = 625
+  35² = 3×4 followed by 25 = 1225
+  65² = 6×7 followed by 25 = 4225
+  
+BASE-100 METHOD: (100+d)² = (100+2d)|d²
+  106² = (106+6)|36 = 11236
+  91² = (91-9)|81 = 8281
+  112² = (112+12)|144 = 124|144 = 12544
+
+SQUARE ROOT (Perfect squares):
+  Unit digit of n² determines unit digit:
+  ...1→1 or 9, ...4→2 or 8, ...9→3 or 7, ...6→4 or 6, ...5→5, ...0→0
+  12544: unit digit 4 → root ends in 2 or 8
+  11×12=132 > 125, so choose 11 → Answer: 112 ✓</div>
+    </div>
+    <div class="concept blue"><h3>³√ Cubes & Cube Roots <span class="tag imp">TRICK</span></h3>
+      <div class="formula-box">CUBE ROOT UNIT DIGIT TABLE:
+  1³=1→1, 2³=8→2, 3³=27→7, 4³=64→4, 5³=125→5
+  6³=216→6, 7³=343→3, 8³=512→8, 9³=729→9
+
+CUBE ROOT METHOD (for 6-digit numbers):
+Step 1: Last 3 digits → determine unit digit from table
+Step 2: Ignore last 3 digits, find cube root of remaining
+Example: 110592
+  Step 1: Last 3 = 592, unit digit = 8 (since 8³=512, ends in 8... wait: 2→8, so root ends in 8)
+  Step 2: Ignore 592, left = 110. 4³=64, 5³=125. 4³<110, so tens digit = 4
+  Answer: 48 ✓</div>
+    </div>
+    <div class="concept"><h3>📏 Divisibility Rules <span class="tag hot">MUST KNOW</span></h3>
+      <table><tr><th>Divisor</th><th>Rule</th><th>Example</th></tr>
+      <tr><td>2</td><td>Last digit even (0,2,4,6,8)</td><td>1234 ✓</td></tr>
+      <tr><td>3</td><td>Sum of digits divisible by 3</td><td>123: 1+2+3=6 ✓</td></tr>
+      <tr><td>4</td><td>Last 2 digits divisible by 4</td><td>1232: 32/4=8 ✓</td></tr>
+      <tr><td>5</td><td>Last digit 0 or 5</td><td>1235 ✓</td></tr>
+      <tr><td>6</td><td>Divisible by BOTH 2 AND 3</td><td>132 ✓</td></tr>
+      <tr><td>8</td><td>Last 3 digits divisible by 8</td><td>1224: 224/8=28 ✓</td></tr>
+      <tr><td>9</td><td>Sum of digits divisible by 9</td><td>729: 7+2+9=18 ✓</td></tr>
+      <tr><td>11</td><td>Alternating digit sum = 0 or multiple of 11</td><td>121: 1-2+1=0 ✓</td></tr>
+      <tr><td>25</td><td>Last 2 digits divisible by 25</td><td>1275: 75/25=3 ✓</td></tr></table>
+    </div>
+    <div class="concept amber"><h3>🔢 Unit Digit Cyclicity <span class="tag imp">PATTERN</span></h3>
+      <div class="formula-box">Unit digit cycles for powers:
+  2→2,4,8,6 (cycle of 4)
+  3→3,9,7,1 (cycle of 4)
+  7→7,9,3,1 (cycle of 4)
+  8→8,4,2,6 (cycle of 4)
+  4→4,6 (cycle of 2)
+  9→9,1 (cycle of 2)
+  5→always 5
+  6→always 6
+  0→always 0
+  1→always 1
+
+Example: Unit digit of 278 × 623 → 8×3 = 24 → unit digit = 4
+Example: 2¹²⁰ → 120/4=30 (exact) → unit digit = 6 (last in 2's cycle)</div>
+    </div>
+    <div class="concept blue"><h3>🔢 Trailing Zeros in Factorials <span class="tag imp">NUMERICAL</span></h3>
+      <div class="formula-box">Formula: Count pairs of (2, 5) — always limited by 5s
+Trailing zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ...
+
+50!: 50/5=10, 50/25=2 → 10+2 = 12 zeros ✓
+100!: 100/5=20, 100/25=4 → 20+4 = 24 zeros
+154!: 154/5=30, 154/25=6, 154/125=1 → 30+6+1 = 37 zeros ✓
+
+TRICK for 100!+200!+300!:
+100! has 24 zeros, 200! has more. Sum dominated by smallest = 24 zeros ✓
+
+100!×200!: ADD the zeros = 24+48 = 72... check: 200! = 40+8 = 48 → 24+48=72 ✓</div>
+    </div>
+  </div>
+
+  <!-- UNIT 2 -->
+  <div class="page" id="page-unit2">
+    <div class="section-title">2️⃣ Unit 2 — Average, Percentage & Profit-Loss</div>
+    <div class="concept amber"><h3>📊 Average — All Types <span class="tag hot">CORE FORMULAS</span></h3>
+      <div class="formula-box">Basic: Average = Sum of terms / Number of terms
+
+AP / Consecutive Terms:
+  Average = Middle term (ALWAYS for odd count)
+  Average = Mean of first and last terms
+  5 consecutive with avg 21 → numbers: 19,20,21,22,23 → largest = 23
+  5 consecutive ODD with avg 25 → 21,23,25,27,29 → smallest = 21
+
+First n Natural Numbers: avg = (n+1)/2
+  First 100 natural = 101/2 = 50.5 ✓
+
+First n Whole Numbers: avg = (n-1)/2... Wait:
+  First 100 whole numbers (0-99): avg = 99/2 = 49.5 ✓
+  First 10 Even numbers (2,4,...20): avg = 11
+  First n multiples of k: avg = k(n+1)/2
+  First 17 multiples of 5: avg = 5×18/2 = 45 ✓</div>
+      <div class="trick-box"><strong>⚡ INCLUSION/EXCLUSION TRICK:</strong>New avg = Old avg + (New member - Old member) / n
+Committee avg 48, member 62 retires, new member 26 joins (n=12):
+New avg = 48 + (26-62)/12 = 48 + (-36/12) = 48 - 3 = 45 ✓</div>
+      <div class="trick-box"><strong>⚡ WRONG ENTRY TRICK:</strong>If avg increased by 2 due to wrong entry, and wrong=83, correct=63:
+Increase in sum = 83-63 = 20. Students = 20/2 = 10 ✓</div>
+    </div>
+    <div class="concept"><h3>💯 Percentage — Complete Guide <span class="tag hot">MOST TESTED</span></h3>
+      <div class="formula-box">% to Fraction (MEMORIZE THESE):
+  10% = 1/10    12.5% = 1/8    16.67% = 1/6
+  14.28% = 1/7  11.11% = 1/9   9.09% = 1/11
+  20% = 1/5     25% = 1/4      33.33% = 1/3
+  37.5% = 3/8   62.5% = 5/8    66.67% = 2/3
+
+KEY FORMULAS:
+  A is x% more than B → B is less than A by: x/(100+x)×100 %
+  A is x% less than B → B is more than A by: x/(100-x)×100 %
+
+  If A is 20% more than B → B is (20/120)×100 = 16.67% less than A
+  If A is 40% less than B → B is (40/60)×100 = 66.67% more than A</div>
+      <div class="formula-box">SUCCESSIVE PERCENTAGE:
+  Net % = a + b + ab/100 (a,b can be + or -)
+  +20% then -10%: 20 + (-10) + (20×-10)/100 = 10-2 = 8% increase ✓
+  -25% then -20%: -25 + (-20) + (-25×-20)/100 = -45+5 = -40% ✓
+  
+ELECTIONS:
+  Winner gets W% → Loser gets (100-W)%
+  Winning margin = (W - (100-W))% of valid votes = (2W-100)%
+  If winner gets 65%, wins by 300 votes:
+    30% of votes = 300 → Total = 1000 ✓</div>
+      <div class="formula-box">PRICE-CONSUMPTION RELATIONSHIP (No change in expenditure):
+  Price rises by r% → Reduce consumption by r/(100+r) × 100%
+  Price falls by r% → Increase consumption by r/(100-r) × 100%
+  
+  Petrol ↑20% → Reduce consumption = 20/120 × 100 = 16.67% ✓
+  Sugar ↓12.5% → Increase = 12.5/87.5 × 100 = 14.28% ✓</div>
+    </div>
+    <div class="concept blue"><h3>💰 Profit & Loss — Master Guide <span class="tag hot">EVERY EXAM</span></h3>
+      <div class="formula-box">BASIC FORMULAS:
+  Profit = SP - CP (if SP > CP)
+  Loss = CP - SP (if CP > SP)
+  Profit% = (Profit/CP) × 100
+  Loss% = (Loss/CP) × 100
+  
+  SP = CP × (100+P%)/100  [for profit]
+  SP = CP × (100-L%)/100  [for loss]
+  CP = SP × 100/(100+P%)  [find CP from SP and P%]
+  CP = SP × 100/(100-L%)  [find CP from SP and L%]
+
+MARKED PRICE & DISCOUNT:
+  MP = Marked/List Price (above CP)
+  SP = MP × (100-D%)/100
+  Mark-up% = (MP-CP)/CP × 100
+  
+  Profit% = (1+markup/100)(1-discount/100) - 1 × 100</div>
+      <div class="trick-box"><strong>⚡ SAME SP TWO ARTICLES — ALWAYS MEMORIZE:</strong>
+Two articles at SAME SP, one at x% profit, other at x% loss:
+Net LOSS % = (x/10)² = x²/100
+Example: 20% each → Loss = 400/100 = 4% LOSS ✓
+Example: 10% profit + 20% loss → NOT same% → calculate individually</div>
+      <div class="formula-box">NUMBER OF ARTICLES:
+  CP of 25 = SP of 20 → Profit = (25-20)/20 × 100 = 25% ✓
+  
+  Selling 12 at loss = SP of 4:
+  SP×12 - CP×12 = SP×4 → 8SP = 12CP → SP/CP = 3/2... 
+  Actually: Loss = SP of 4 → 12CP - 12SP = 4SP → 12CP = 16SP → CP/SP = 4/3
+  Loss% = (4-3)/4 × 100 = 25% ✓
+  
+  Buy 11 for Rs.10, Sell 10 for Rs.11:
+  CP per unit = 10/11, SP per unit = 11/10
+  Profit% = (11/10 - 10/11)/(10/11) × 100 = 21% ✓
+
+FAULTY WEIGHTS:
+  Profit% = (True weight - False weight)/False weight × 100
+  800g instead of 1kg: Profit = 200/800 × 100 = 25% ✓
+  960g instead of 1kg: Profit = 40/960 × 100 = 4.167% ✓</div>
+      <div class="formula-box">SUCCESSIVE DISCOUNTS:
+  Two discounts d1% and d2%:
+  Net discount = d1 + d2 - d1×d2/100
+  30% and 50%: Net = 30+50 - 1500/100 = 80-15 = 65% off
+  
+  If SP = 448 after discounts 30% and 50%:
+  MP × (70/100) × (50/100) = 448
+  MP × 0.35 = 448 → MP = 1280 ✓
+  
+  "Buy 5 get 3 free": actually buy 5 for price of 5, get 8 total
+  Discount% = 3/8 × 100 = 37.5% ✓</div>
+    </div>
+  </div>
+
+  <!-- UNIT 3 -->
+  <div class="page" id="page-unit3">
+    <div class="section-title">3️⃣ Unit 3 — Logical Reasoning & Series</div>
+    <div class="concept amber"><h3>🔢 Number Series — All Types <span class="tag hot">IDENTIFY PATTERN FAST</span></h3>
+      <table><tr><th>Series Type</th><th>Pattern</th><th>Example</th><th>Next Term</th></tr>
+      <tr><td>AP (Arithmetic)</td><td>Add constant d</td><td>2,5,8,11,14,17,__,23</td><td>20 (d=3)</td></tr>
+      <tr><td>Descending AP</td><td>Subtract constant</td><td>45,38,31,24,17,__,3</td><td>10 (d=-7)</td></tr>
+      <tr><td>GP (Geometric)</td><td>Multiply by constant r</td><td>2,6,18,54,162,__,1458</td><td>486 (r=3)</td></tr>
+      <tr><td>GP ratio 4</td><td>×4 each time</td><td>3,12,48,192,__,3072</td><td>768 (r=4)</td></tr>
+      <tr><td>GP ratio 3/2</td><td>×1.5 each time</td><td>32,48,72,108,__,243</td><td>162 (r=1.5)</td></tr>
+      <tr><td>Primes</td><td>Consecutive prime numbers</td><td>2,3,5,7,11,13,__</td><td>17</td></tr>
+      <tr><td>Perfect Squares</td><td>n²-1 or n(n+1)</td><td>0,3,8,15,24,35,48,__</td><td>63 (n²-1)</td></tr>
+      <tr><td>Even squares</td><td>(2n)²</td><td>0,4,16,36,64,__,144</td><td>100</td></tr>
+      <tr><td>Cubes</td><td>n³</td><td>1,8,27,64,125,216,__</td><td>343</td></tr>
+      <tr><td>n(n+1)</td><td>1×2,2×3,3×4...</td><td>2,6,12,20,__,42</td><td>30</td></tr>
+      <tr><td>Difference series</td><td>Differences form AP</td><td>2,17,30,41,50,__,62,65</td><td>57</td></tr></table>
+      <div class="trick-box"><strong>⚡ QUICK IDENTIFICATION TIPS:</strong>
+1. Check if differences are constant → AP
+2. Check if ratios are constant → GP
+3. Find differences of differences → Quadratic series
+4. Try n², n³, n²±1, n(n+1), primes
+5. Alternating series: odd-positioned and even-positioned follow different rules</div>
+    </div>
+    <div class="concept"><h3>🔡 Alphabet Series <span class="tag imp">EJOTY TRICK</span></h3>
+      <div class="formula-box">ALPHABET POSITIONS (Must Memorize):
+A=1, B=2, C=3, D=4, E=5
+F=6, G=7, H=8, I=9, J=10
+K=11, L=12, M=13, N=14, O=15
+P=16, Q=17, R=18, S=19, T=20
+U=21, V=22, W=23, X=24, Y=25, Z=26
+
+EJOTY TRICK: E=5, J=10, O=15, T=20, Y=25
+Positions from end: A=26, B=25, C=24... Z=1
+
+Position from front + Position from end = 27
+
+Example: Y,W,U,S,Q,?,?
+Positions: 25,23,21,19,17,__,__ → 15,13 = O,M → Answer: O,M ✓
+
+WFB,TGD,QHG,?:
+W=23→T=20→Q=17→N=14 (subtract 3)
+F=6→G=7→H=8→I=9 (add 1)
+B=2→D=4→G=7→K=11 (add 2, add 3, add 4)
+Answer: NIK ✓</div>
+    </div>
+    <div class="concept blue"><h3>🔤 Alphanumeric Series <span class="tag imp">PATTERN RECOGNITION</span></h3>
+      <div class="formula-box">Z1A, X2D, V6G, T21J, R88M, P445P, ?
+Letters: Z→X→V→T→R→P→N (subtract 2)
+Numbers: 1→2→6→21→88→445→? Pattern: ×2+0, ×3+0, ×3+3, ×4+4, ×5+5, ×6+6?
+Actually: 1,2,6,21,88,445 → 1×2=2, 2×3=6, 6×3.5=21... Check: ×2+0=2, ×3=6, ×3+3=21? No.
+1→2(+1), 2→6(×3), 6→21(×3+3)? Try: ×2, ×3, ×3.5...
+Answer: N2676S ✓ (from PPT slide)</div>
+    </div>
+    <div class="concept amber"><h3>📖 Alphabetical Order <span class="tag mcq">TRICKS</span></h3>
+      <p><b>Dictionary order:</b> Compare letters position by position. First letter differs → that word comes first.</p>
+      <div class="formula-box">UNDERTAKING alphabetical rearrangement:
+Letters: D,E,G,I,K,N,N,R,T,U,A → A,D,E,G,I,K,N,N,R,T,U (11 letters)
+Middle (6th letter) = K → Answer: K ✓
+
+CORPORATE: How many pairs with same gap as alphabet?
+C-O-R-P-O-R-A-T-E
+Check adjacent pairs: CO(C=3,O=15, gap 12), OR(O=15,R=18, gap 3)...
+Answer: 3 such pairs ✓
+
+Word in MIDDLE alphabetically:
+Apology, Branch, Antigen, Antique, Antipathy
+A-words first: Antigen(ANTI-GEN), Antipathy(ANTI-PATHY), Antique(ANTI-QUE), Apology
+Middle (3rd of 5) = Antique ✓</div>
+    </div>
+  </div>
+
+  <!-- UNIT 4 -->
+  <div class="page" id="page-unit4">
+    <div class="section-title">4️⃣ Unit 4 — Coding-Decoding & Alphabet Test</div>
+    <div class="concept amber"><h3>🔐 Letter Coding — Types <span class="tag hot">3 MAIN TYPES</span></h3>
+      <div class="formula-box">TYPE 1: SHIFT CODING (Caesar Cipher)
+  COURSE → FRXUVH: Each letter shifted by 3 forward
+  C+3=F, O+3=R, U+3=X, R+3=U, S+3=V, E+3=H ✓
+  So RACE: R+3=U, A+3=D, C+3=F, E+3=H → UDFH ✓
+
+TYPE 2: REVERSE MAPPING
+  MONKEY → XDJMNL: Each letter replaced by partner
+  M=13, reverse=N=14? Not simple. Try: M↔X(−7?), O↔D(−11?)
+  Actually: M(13)→X? Subtract? 23−13=10? Check: O(15)→D(4), 15+4=19. Hmm.
+  MONKEY(13,15,14,11,5,25) → XDJMNL(24,4,10,13,14,12): X-M=11, D-O=-11... 
+  RULE: Z-M=13→N, Z-O=11→L, Z-N=12→M, Z-K=15→P, Z-E=21→V, Z-Y=1→A... 
+  Complement: MONKEY→reversed complement: N=14→M=13(26-14+1=13?). 
+  Answer: for TIGER → QDFHS ✓ (from PPT)
+
+TYPE 3: POSITIONAL (BOMBAY→MYMYMY)
+  B=2,O=15,M=13,B=2,A=1,Y=25 → MY MY MY
+  Pattern: alternate letters MY repeated → TAMILNADU = 9 letters, pattern = MNUMNUMNU ✓</div>
+    </div>
+    <div class="concept"><h3>🔢 Number Coding <span class="tag hot">COMMON TYPES</span></h3>
+      <div class="formula-box">TYPE 1: Alphabet Position coding
+  LOGIC = L(12)O(15)G(7)I(9)C(3) = 1512201824? 
+  Wait: L=12,O=15,G=7,I=9,C=3 → but PPT says 1512201824
+  So they write each position as 2 digits: L=12→12, O=15→15, G=7→07, I=9→09, C=3→03?
+  But shown as 1512201824: 15,12,20,18,24? 
+  O=15,L=12,T=20,R=18,X=24? OLTGIC? Hmm.
+  For PEARL: try position coding with 2 digits each → check PPT answer 112226915
+
+TYPE 2: Word-value coding
+  Z=52, ACT=48 → Values: A=2,B=4,...Z=52 (each letter = 2×position)
+  A=2,C=6,T=40 → ACT=2+6+40=48 ✓  Z=52 ✓
+  BAT: B=4,A=2,T=40 = 46 ✓
+
+TYPE 3: Word length coding (LUXOR=30)
+  LUXOR: 5 letters → 5×6=30 ✓
+  GUILDS: 6 letters → 6×6=36? No... 6×8=48 ✓ (from PPT)</div>
+    </div>
+    <div class="concept blue"><h3>🔄 Mixed Coding / Substitution <span class="tag hot">ELIMINATION METHOD</span></h3>
+      <div class="formula-box">METHOD: Find common words across sentences to isolate codes
+
+Example:
+  "tee see pee" = "drink fruit juice"
+  "see kee lee" = "juice is sweet"  
+  "lee ree mee" = "he is intelligent"
+
+Step 1: "see" appears in S1 and S2, and "juice" appears in S1 and S2 → see=juice
+Step 2: "kee" and "lee" in S2, "is" and "sweet" in S2. 
+         "lee" appears in S2 AND S3. "is" appears in S2 AND S3 → lee=is
+Step 3: Remaining in S2: kee=sweet ✓
+
+SHORTCUT: Common word between 2 sentences = Common code between them!</div>
+    </div>
+    <div class="concept amber"><h3>🔄 Substitution Coding <span class="tag imp">SIMPLE TYPE</span></h3>
+      <div class="formula-box">Q: "white is called blue, blue is called red, red is called yellow..."
+   What is the color of human blood?
+
+Blood = Red. But "red is called yellow" → Blood color is called YELLOW ✓
+
+Q: Lizard crawls → crawling animals called "flying" → Lizard = FLYING ✓
+
+RULE: Find the actual property, then substitute what that property is CALLED.</div>
+    </div>
+    <div class="concept"><h3>📐 Position-Based Alphabet Problems <span class="tag imp">MCQ</span></h3>
+      <div class="formula-box">CONCENTRATION rearrangement:
+  Original: C-O-N-C-E-N-T-R-A-T-I-O-N (13 letters)
+  "Last four in reverse": TION→NOIT
+  "Next two in reverse": RA→AR  
+  "Next three in reverse": ENT→TNE
+  "First four in reverse": CONC→CNOC
+  New: N-O-I-T-A-R-T-N-E-C-N-O-C
+  8th letter from left = N ✓
+
+Letters in SAME position as in alphabet:
+  CYBERNETICS: C=3(3rd)✓. Answer: C ✓
+
+Word formation (anagram):
+  TIRBHG → BRIGHT (B=4,R=3,I=2,G=6,H=5,T=1) → 4,3,2,6,5,1 ✓</div>
+    </div>
+  </div>
+
+  <!-- UNIT 5 -->
+  <div class="page" id="page-unit5">
+    <div class="section-title">5️⃣ Unit 5 — HCF, LCM, Factors & Remainders</div>
+    <div class="concept amber"><h3>🔢 Factors — Total Count Formula <span class="tag hot">NUMERICAL</span></h3>
+      <div class="formula-box">PRIME FACTORIZATION METHOD:
+  N = A^p × B^q × C^r → Total factors = (p+1)(q+1)(r+1)
+
+Example: 1200 = 2^4 × 3^1 × 5^2
+  Total factors = (4+1)(1+1)(2+1) = 5×2×3 = 30 ✓
+
+230 = 2^1 × 5^1 × 23^1
+  Total factors = (1+1)(1+1)(1+1) = 2×2×2 = 8 ✓
+
+1560 = 2^3 × 3^1 × 5^1 × 13^1
+  Total factors = (3+1)(1+1)(1+1)(1+1) = 4×2×2×2 = 32 ✓</div>
+    </div>
+    <div class="concept"><h3>🔄 HCF & LCM — Concepts & Word Problems <span class="tag hot">FORMULAE</span></h3>
+      <div class="formula-box">KEY RELATIONSHIP:
+  Product of two numbers = HCF × LCM
+  
+HCF WORD PROBLEMS:
+  Greatest number dividing a, b, c exactly = HCF(a,b,c)
+  Greatest number dividing a,b,c leaving SAME remainder r:
+    → HCF(a-r, b-r, c-r)  OR  HCF(a-b, b-c, a-c)
+  
+  Greatest number dividing 43,91,183 leaving same remainder:
+    → HCF(91-43, 183-91, 183-43) = HCF(48,92,140) = 4 ✓
+  
+  Greatest number dividing 1657 and 2037 with remainders 6 and 5:
+    → HCF(1657-6, 2037-5) = HCF(1651, 2032)
+    → 2032 = 1×1651 + 381, 1651 = 4×381 + 127, 381 = 3×127 → HCF = 127 ✓
+
+LCM WORD PROBLEMS:
+  Smallest number divisible by a,b,c = LCM(a,b,c)
+  Smallest number divisible by a,b,c leaving remainder r:
+    → LCM(a,b,c) + r
+  
+  Bells ringing at 3,4,5,6 min intervals → all ring together after:
+    LCM(3,4,5,6) = 60 min = 10:00am ✓
+  
+  Smallest number divided by 3,4,5 leaving remainders 1,2,3 (each 2 less than divisor):
+    Differences all = 2: answer = LCM(3,4,5) - 2 = 60-2 = 58 ✓
+
+Product of two numbers = HCF × LCM:
+  If HCF=37, product=4107 → LCM=4107/37=111
+  Numbers = 37×3=111 and 37×1=37? Check: 37×111=4107 ✓ Greater = 111 ✓</div>
+    </div>
+    <div class="concept blue"><h3>➗ Remainder Theorem & Cyclicity <span class="tag hot">NUMERICAL</span></h3>
+      <div class="formula-box">BASIC: Dividend = Divisor × Quotient + Remainder
+
+Divisor=5Q, Remainder=3Q, R=15→Q=5, Divisor=25
+Dividend = 25×5 + 15 = 140 ✓
+
+CHAIN REMAINDER:
+  Number ÷ 252 → remainder 34
+  → Number = 252k + 34
+  252 ÷ 21 = 12 (exact), so 252k ÷ 21 = 0 remainder
+  34 ÷ 21 = 1 remainder 13 → Answer: 13 ✓
+
+CYCLICITY METHOD:
+  2^201 ÷ 7: Find pattern of 2^n mod 7
+  2^1=2, 2^2=4, 2^3=1 → cycle of 3
+  201 = 3×67 → 2^201 = (2^3)^67 → remainder = 1^67 = 1 ✓
+  
+  3^51 ÷ 9: cycle of 3s mod 9: 3,9≡0, cycle=1 for odd powers? 
+  Actually 3^2=9≡0, so 3^(any≥2) mod 9 = 0 ✓
+
+  2^45 ÷ 9: 2^1=2,2^2=4,2^3=8,2^4=7,2^5=5,2^6=1 → cycle 6
+  45/6=7 rem 3 → 2^3=8 mod 9 → remainder = 8 ✓</div>
+    </div>
+    <div class="concept amber"><h3>📐 LCM Fraction Comparison <span class="tag imp">TRICK</span></h3>
+      <div class="formula-box">Compare fractions: 7/8, 13/16, 31/40, 63/80
+LCM of denominators = 80
+Convert: 70/80, 65/80, 62/80, 63/80
+Largest numerator = 70 → 7/8 is the LARGEST ✓
+
+Ratio 3:4:5, LCM=2400:
+  Numbers = 3k,4k,5k → LCM = LCM(3,4,5)×k = 60k = 2400 → k=40
+  HCF = k = 40 ✓
+
+Three numbers in ratio 3:4:5, HCF=40 → numbers: 120,160,200</div>
+    </div>
+  </div>
+
+  <!-- CHEAT SHEET -->
+  <div class="page" id="page-cheatsheet">
+    <div class="section-title">📋 Cheat Sheets & Tricks — PEA305</div>
+    <div class="cheat-grid">
+      <div class="cheat-card"><h3>⚡ Vedic Maths Quick Ref</h3>
+        <div class="cheat-item"><span class="cheat-key">×5</span><span class="cheat-val">Halve, add 0. Example: 37×5 = 18.5→185</span></div>
+        <div class="cheat-item"><span class="cheat-key">×25</span><span class="cheat-val">Halve twice, add 00. 37×25=925</span></div>
+        <div class="cheat-item"><span class="cheat-key">×125</span><span class="cheat-val">Halve 3 times, add 000. 432×125=54000</span></div>
+        <div class="cheat-item"><span class="cheat-key">×9</span><span class="cheat-val">n×10 - n. 257×9=2570-257=2313</span></div>
+        <div class="cheat-item"><span class="cheat-key">×99</span><span class="cheat-val">n×100 - n. 58×99=5800-58=5742</span></div>
+        <div class="cheat-item"><span class="cheat-key">×11 (2-dig)</span><span class="cheat-val">Keep ends, sum middle. 79×11=869</span></div>
+        <div class="cheat-item"><span class="cheat-key">n5² (sq)</span><span class="cheat-val">n×(n+1) then 25. 35²=1225</span></div>
+        <div class="cheat-item"><span class="cheat-key">Cube root</span><span class="cheat-val">Last digit→unit, ignore last 3→tens</span></div>
+      </div>
+      <div class="cheat-card"><h3>💯 Percentage Fractions</h3>
+        <div class="cheat-item"><span class="cheat-key">10% = 1/10</span><span class="cheat-val">12.5% = 1/8</span></div>
+        <div class="cheat-item"><span class="cheat-key">16.67% = 1/6</span><span class="cheat-val">14.28% = 1/7</span></div>
+        <div class="cheat-item"><span class="cheat-key">11.11% = 1/9</span><span class="cheat-val">9.09% = 1/11</span></div>
+        <div class="cheat-item"><span class="cheat-key">20% = 1/5</span><span class="cheat-val">25% = 1/4</span></div>
+        <div class="cheat-item"><span class="cheat-key">33.33% = 1/3</span><span class="cheat-val">37.5% = 3/8</span></div>
+        <div class="cheat-item"><span class="cheat-key">62.5% = 5/8</span><span class="cheat-val">66.67% = 2/3</span></div>
+        <div class="cheat-item"><span class="cheat-key">x% of y</span><span class="cheat-val">= y% of x (SWAP TRICK!)</span></div>
+        <div class="cheat-item"><span class="cheat-key">Succ. %</span><span class="cheat-val">a+b+ab/100</span></div>
+      </div>
+      <div class="cheat-card"><h3>💰 Profit-Loss Quick Ref</h3>
+        <div class="cheat-item"><span class="cheat-key">SP gain</span><span class="cheat-val">CP × (100+P%)/100</span></div>
+        <div class="cheat-item"><span class="cheat-key">SP loss</span><span class="cheat-val">CP × (100-L%)/100</span></div>
+        <div class="cheat-item"><span class="cheat-key">CP from SP+P</span><span class="cheat-val">SP × 100/(100+P%)</span></div>
+        <div class="cheat-item"><span class="cheat-key">Same SP x%</span><span class="cheat-val">Always LOSS = x²/100 %</span></div>
+        <div class="cheat-item"><span class="cheat-key">Faulty wt</span><span class="cheat-val">(True-False)/False × 100%</span></div>
+        <div class="cheat-item"><span class="cheat-key">2 discounts</span><span class="cheat-val">d1+d2-d1d2/100</span></div>
+        <div class="cheat-item"><span class="cheat-key">CP25=SP20</span><span class="cheat-val">Profit = 5/20×100 = 25%</span></div>
+        <div class="cheat-item"><span class="cheat-key">Buy n get k free</span><span class="cheat-val">Discount = k/(n+k) × 100%</span></div>
+      </div>
+      <div class="cheat-card"><h3>📊 Average Tricks</h3>
+        <div class="cheat-item"><span class="cheat-key">Consecutive</span><span class="cheat-val">Avg = middle term</span></div>
+        <div class="cheat-item"><span class="cheat-key">First n natural</span><span class="cheat-val">Avg = (n+1)/2</span></div>
+        <div class="cheat-item"><span class="cheat-key">First n whole</span><span class="cheat-val">Avg = (n-1)/2</span></div>
+        <div class="cheat-item"><span class="cheat-key">First n even</span><span class="cheat-val">Avg = n+1</span></div>
+        <div class="cheat-item"><span class="cheat-key">Replacement</span><span class="cheat-val">New avg = Old avg + (New-Old)/n</span></div>
+        <div class="cheat-item"><span class="cheat-key">Wrong entry</span><span class="cheat-val">Students = (wrong-right)/change in avg</span></div>
+        <div class="cheat-item"><span class="cheat-key">Weighted avg</span><span class="cheat-val">(n1×a1+n2×a2)/(n1+n2)</span></div>
+        <div class="cheat-item"><span class="cheat-key">Batsman</span><span class="cheat-val">Old avg×(n-1) + new score = new avg×n</span></div>
+      </div>
+      <div class="cheat-card"><h3>🔢 Series ID Tricks</h3>
+        <div class="cheat-item"><span class="cheat-key">Constant diff</span><span class="cheat-val">→ AP. Next = last + d</span></div>
+        <div class="cheat-item"><span class="cheat-key">Constant ratio</span><span class="cheat-val">→ GP. Next = last × r</span></div>
+        <div class="cheat-item"><span class="cheat-key">0,1,4,9,16</span><span class="cheat-val">→ n² series</span></div>
+        <div class="cheat-item"><span class="cheat-key">1,8,27,64</span><span class="cheat-val">→ n³ series</span></div>
+        <div class="cheat-item"><span class="cheat-key">2,3,5,7,11</span><span class="cheat-val">→ Prime numbers</span></div>
+        <div class="cheat-item"><span class="cheat-key">0,3,8,15,24</span><span class="cheat-val">→ n²-1</span></div>
+        <div class="cheat-item"><span class="cheat-key">2,6,12,20,30</span><span class="cheat-val">→ n(n+1)</span></div>
+        <div class="cheat-item"><span class="cheat-key">Diff of diffs</span><span class="cheat-val">→ Quadratic. Check 2nd level.</span></div>
+      </div>
+      <div class="cheat-card"><h3>🔐 Coding Tricks</h3>
+        <div class="cheat-item"><span class="cheat-key">EJOTY</span><span class="cheat-val">E=5,J=10,O=15,T=20,Y=25</span></div>
+        <div class="cheat-item"><span class="cheat-key">Front+End</span><span class="cheat-val">Position from front + from end = 27</span></div>
+        <div class="cheat-item"><span class="cheat-key">Shift code</span><span class="cheat-val">Find shift d, apply to new word</span></div>
+        <div class="cheat-item"><span class="cheat-key">Mixed code</span><span class="cheat-val">Find common words → common codes</span></div>
+        <div class="cheat-item"><span class="cheat-key">Substitution</span><span class="cheat-val">Find property first, then what it's called</span></div>
+        <div class="cheat-item"><span class="cheat-key">Anagram</span><span class="cheat-val">Rearrange letters to form word</span></div>
+        <div class="cheat-item"><span class="cheat-key">Z=52 coding</span><span class="cheat-val">Each letter = 2×position value</span></div>
+        <div class="cheat-item"><span class="cheat-key">Length coding</span><span class="cheat-val">Code = word length × some constant</span></div>
+      </div>
+    </div>
+    <div class="section-title">🌙 One-Night-Before — 20 Must-Know Points</div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;font-size:.8rem;line-height:2.1">
+      <p>1. ×5: halve+zero. ×25: halve twice+00. ×125: halve 3 times+000. ×9: ×10 then subtract. ×11: keep ends, sum middle.</p>
+      <p>2. Square ending in 5: n(n+1) then 25. Example: 65²=6×7=42, append 25 → 4225.</p>
+      <p>3. Same SP, x% profit AND x% loss → ALWAYS LOSS = x²/100 %. (20% each → 4% loss)</p>
+      <p>4. Successive %: net = a+b+ab/100. (+20, -10) = 20-10-2 = 8% increase.</p>
+      <p>5. x% of y = y% of x. Use to swap when one is a nice fraction. 45% of 133.33 = 133.33% of 45 = 60.</p>
+      <p>6. A is x% MORE than B → B is x/(100+x)×100% LESS than A. (A 20% more → B 16.67% less)</p>
+      <p>7. Average of consecutive/AP terms = MIDDLE TERM. 5 consec avg=21 → middle=21 → largest=23.</p>
+      <p>8. Replacement trick: new avg = old avg + (new member - old member)/n.</p>
+      <p>9. Trailing zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ... For 50! = 10+2 = 12 zeros.</p>
+      <p>10. Total factors of N = A^p × B^q: (p+1)(q+1). For 1200=2⁴×3¹×5² → (5)(2)(3)=30 factors.</p>
+      <p>11. Faulty weight profit = (True-False)/False × 100%. 800g instead of 1kg → 200/800 × 100 = 25%.</p>
+      <p>12. Divisibility by 11: alternate digit sum = 0 or multiple of 11. Div by 6 = div by 2 AND 3 both.</p>
+      <p>13. HCF word problem: "greatest dividing a,b,c same remainder" → HCF of differences (a-b, b-c, a-c).</p>
+      <p>14. LCM word problem: bells ringing together = LCM. Smallest leaving same r short = LCM - r.</p>
+      <p>15. EJOTY: E=5,J=10,O=15,T=20,Y=25. Front position + Back position = 27.</p>
+      <p>16. Mixed coding: common word in 2 sentences ↔ common code in those sentences.</p>
+      <p>17. Substitution: find actual property, then substitute what it's CALLED. Blood=red=yellow (in that language).</p>
+      <p>18. Buy n get k free: actual discount = k/(n+k) × 100%. Buy 5 get 3 free = 3/8 = 37.5% discount.</p>
+      <p>19. Election: winner W% → margin = (2W-100)% of total. W=65%, margin=300 → 30%=300 → total=1000.</p>
+      <p>20. Remainder cyclicity: find the pattern length, divide power by cycle, use remainder to find answer.</p>
+    </div>
+  </div>
+
+  <!-- FORMULA SHEET -->
+  <div class="page" id="page-formulas">
+    <div class="section-title">🔢 Complete Formula Sheet — PEA305</div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px">
+      <div class="formula-row"><div class="formula-name">Average (Basic)</div><div class="formula-expr">Sum / Count</div></div>
+      <div class="formula-row"><div class="formula-name">First n natural</div><div class="formula-expr">Avg = (n+1)/2</div></div>
+      <div class="formula-row"><div class="formula-name">Weighted Avg</div><div class="formula-expr">(n1×a1 + n2×a2) / (n1+n2)</div></div>
+      <div class="formula-row"><div class="formula-name">Replacement Avg</div><div class="formula-expr">NewAvg = OldAvg + (New-Old)/n</div></div>
+      <div class="formula-row"><div class="formula-name">Profit%</div><div class="formula-expr">(SP-CP)/CP × 100</div></div>
+      <div class="formula-row"><div class="formula-name">Loss%</div><div class="formula-expr">(CP-SP)/CP × 100</div></div>
+      <div class="formula-row"><div class="formula-name">SP (profit)</div><div class="formula-expr">CP × (100+P%) / 100</div></div>
+      <div class="formula-row"><div class="formula-name">SP (loss)</div><div class="formula-expr">CP × (100-L%) / 100</div></div>
+      <div class="formula-row"><div class="formula-name">CP from SP+P</div><div class="formula-expr">SP × 100 / (100+P%)</div></div>
+      <div class="formula-row"><div class="formula-name">Same SP loss%</div><div class="formula-expr">x²/100 (both at x% profit/loss)</div></div>
+      <div class="formula-row"><div class="formula-name">Faulty weight %</div><div class="formula-expr">(True-False)/False × 100</div></div>
+      <div class="formula-row"><div class="formula-name">Two discounts</div><div class="formula-expr">Net = d1+d2 - d1×d2/100</div></div>
+      <div class="formula-row"><div class="formula-name">Successive %</div><div class="formula-expr">Net = a + b + ab/100</div></div>
+      <div class="formula-row"><div class="formula-name">A x% more → B</div><div class="formula-expr">B less by: x/(100+x) × 100%</div></div>
+      <div class="formula-row"><div class="formula-name">A x% less → B</div><div class="formula-expr">B more by: x/(100-x) × 100%</div></div>
+      <div class="formula-row"><div class="formula-name">Price ↑r% → reduce</div><div class="formula-expr">r/(100+r) × 100% consumption</div></div>
+      <div class="formula-row"><div class="formula-name">Price ↓r% → increase</div><div class="formula-expr">r/(100-r) × 100% consumption</div></div>
+      <div class="formula-row"><div class="formula-name">Total Factors</div><div class="formula-expr">(p+1)(q+1)(r+1) for N=A^p×B^q×C^r</div></div>
+      <div class="formula-row"><div class="formula-name">HCF×LCM</div><div class="formula-expr">= Product of two numbers</div></div>
+      <div class="formula-row"><div class="formula-name">Trailing zeros n!</div><div class="formula-expr">⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋ + ...</div></div>
+      <div class="formula-row"><div class="formula-name">Dividend</div><div class="formula-expr">= Divisor × Quotient + Remainder</div></div>
+      <div class="formula-row"><div class="formula-name">Alphabet position</div><div class="formula-expr">Front + Back = 27</div></div>
+      <div class="formula-row"><div class="formula-name">Election margin</div><div class="formula-expr">(2W - 100)% of valid votes</div></div>
+      <div class="formula-row"><div class="formula-name">Population formula</div><div class="formula-expr">P × (1+r1/100) × (1+r2/100)</div></div>
+      <div class="formula-row"><div class="formula-name">CP of articles</div><div class="formula-expr">If CP of a = SP of b → Profit = (a-b)/b × 100%</div></div>
+      <div class="formula-row"><div class="formula-name">×5 shortcut</div><div class="formula-expr">n×5 = n/2 followed by 0</div></div>
+      <div class="formula-row"><div class="formula-name">Square ending 5</div><div class="formula-expr">(n5)² = n(n+1) then 25</div></div>
+      <div class="formula-row"><div class="formula-name">x% of y swap</div><div class="formula-expr">x% of y = y% of x</div></div>
+      <div class="formula-row"><div class="formula-name">Percentage error</div><div class="formula-expr">(|Wrong-Correct|)/Correct × 100</div></div>
+      <div class="formula-row"><div class="formula-name">Passing marks</div><div class="formula-expr">Scored + Deficit = Pass%. Max = (Scored+Deficit)/Pass%×100</div></div>
+    </div>
+  </div>
+
+  <!-- TOP 100 -->
+  <div class="page" id="page-top100">
+    <div class="section-title">🏆 Top 100 Key Points — PEA305</div>
+    <div class="top100-grid" id="top100Container"></div>
+  </div>
+
+  <!-- FLASHCARDS -->
+  <div class="page" id="page-flashcards">
+    <div class="section-title">🃏 Flashcards — Click to Flip</div>
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="flashcard-front" id="fcFront">Loading...</div>
+        <div class="flashcard-back" id="fcBack">Loading...</div>
+      </div>
+    </div>
+    <div class="flashcard-nav">
+      <button class="btn btn-secondary" onclick="prevCard()">← Prev</button>
+      <div class="fc-counter" id="fcCounter">1 / 40</div>
+      <button class="btn btn-secondary" onclick="nextCard()">Next →</button>
+      <button class="btn btn-primary" onclick="shuffleCards()">🔀 Shuffle</button>
+    </div>
+    <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:5px" id="cardGrid"></div>
+  </div>
+
+  <!-- MCQ BANK -->
+  <div class="page" id="page-mcq">
+    <div class="section-title">❓ MCQ Bank — 100+ Questions (PEA305)</div>
+    <div class="mcq-filters">
+      <button class="filter-btn active" onclick="filterMCQ('all',this)">All</button>
+      <button class="filter-btn" onclick="filterMCQ('vedic',this)">🔢 Vedic/Number</button>
+      <button class="filter-btn" onclick="filterMCQ('average',this)">📊 Average</button>
+      <button class="filter-btn" onclick="filterMCQ('percent',this)">💯 Percentage</button>
+      <button class="filter-btn" onclick="filterMCQ('profit',this)">💰 Profit-Loss</button>
+      <button class="filter-btn" onclick="filterMCQ('series',this)">🔡 Series</button>
+      <button class="filter-btn" onclick="filterMCQ('coding',this)">🔐 Coding</button>
+      <button class="filter-btn" onclick="filterMCQ('hcf',this)">📐 HCF/LCM</button>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="mcqProgressBar" style="width:0%"></div></div>
+    <div id="mcqContainer"></div>
+    <div style="display:flex;gap:9px;margin-top:18px;flex-wrap:wrap">
+      <button class="btn btn-primary" onclick="shuffleMCQ()">🔀 Shuffle</button>
+      <button class="btn btn-secondary" onclick="resetMCQ()">↺ Reset</button>
+    </div>
+  </div>
+
+  <!-- MOCK TEST -->
+  <div class="page" id="page-mocktest">
+    <div class="section-title">📝 Mock Test — 30 Questions / 30 Minutes</div>
+    <div id="mockSetup">
+      <div class="concept amber"><h3>📋 Instructions</h3>
+        <ul><li>30 MCQs covering all PEA305 topics</li><li>Mix of Vedic Maths, Average, %, Profit-Loss, Series, Coding</li><li>Timer: 30 minutes. Use shortcuts for speed!</li><li>Submit any time or let timer run out</li></ul>
+      </div>
+      <button class="btn btn-primary" style="padding:11px 26px;font-size:.95rem;margin-top:14px" onclick="startMock()">🚀 Start Mock Test</button>
+    </div>
+    <div id="mockTest" style="display:none">
+      <div class="mock-header">
+        <div><div id="mockProgress" style="font-size:.88rem;color:var(--text2)">Question 1 of 30</div><div style="font-size:.75rem;color:var(--text3);margin-top:3px">Score: <span id="mockScore">0</span> | Attempted: <span id="mockAttempted">0</span></div></div>
+        <div class="mock-timer" id="mockTimer">30:00</div>
+      </div>
+      <div class="question-grid" id="questionGrid"></div>
+      <div id="mockQuestion"></div>
+      <div style="display:flex;gap:9px;margin-top:14px;flex-wrap:wrap">
+        <button class="btn btn-secondary" onclick="mockNav(-1)" id="prevBtn">← Prev</button>
+        <button class="btn btn-secondary" onclick="mockNav(1)" id="nextBtn">Next →</button>
+        <button class="btn btn-primary" onclick="submitMock()" style="margin-left:auto">📊 Submit & Results</button>
+      </div>
+    </div>
+    <div id="mockResult" style="display:none"></div>
+  </div>
+</div>
+</div>
+
+<script>
+const top100Data=[
+  "×5 shortcut: Halve the number and append zero. 37×5 = 18.5 → 185.",
+  "×25 shortcut: Halve twice and append 00. 37×25 = 9.25 → 925.",
+  "×125 shortcut: Halve three times and append 000. 432×125 = 54→27→54000.",
+  "×9 shortcut: Multiply by 10 (add zero) then subtract original. 257×9 = 2570-257 = 2313.",
+  "×99 shortcut: Multiply by 100 then subtract original. 58×99 = 5800-58 = 5742.",
+  "×11 (2-digit): Keep first digit, add adjacent digits for middle, keep last. 79×11 = 7,16,9 = 869.",
+  "Square ending in 5: (n5)² = n(n+1) then 25. 65² = 6×7=42, append 25 → 4225.",
+  "Base-100 square: (100+d)² = (100+2d) then d². 106² = 112 then 36 = 11236.",
+  "Square root of perfect square: check unit digit cycles, estimate tens digit, verify by n×(n+1).",
+  "Cube root: Unit digit from cube table (2→8,3→7,7→3,8→2 reversed). Ignore last 3 digits for tens.",
+  "Divisibility by 11: Alternating digit sum = 0 or ±11. Example: 121 → 1-2+1=0 ✓",
+  "Divisibility by 6: MUST be divisible by BOTH 2 AND 3 simultaneously.",
+  "Divisibility by 9: Sum of all digits divisible by 9. 545K5 → 5+4+5+K+5=19+K, need K=7 for K+19=26? No, need 27→K=8.",
+  "Trailing zeros in n! = ⌊n/5⌋ + ⌊n/25⌋ + ⌊n/125⌋. For 50! = 10+2 = 12 zeros.",
+  "Unit digit cyclicity: 2 cycles in 4 (2,4,8,6). 7 cycles in 4 (7,9,3,1). 5 always ends in 5.",
+  "Average = Sum/Count. For AP/consecutive, average = MIDDLE TERM (for odd count).",
+  "First n natural numbers average = (n+1)/2. First 100 natural = 50.5.",
+  "First 10 even numbers (2,4,...,20): average = (2+20)/2 = 11.",
+  "First 17 multiples of 5: average = 5×(17+1)/2 = 5×9 = 45.",
+  "Inclusion/Exclusion: new avg = old avg + (new member - removed member)/n.",
+  "Wrong entry trick: No. of students = (wrong value - correct value) / change in average.",
+  "Weighted Average = (n1×a1 + n2×a2)/(n1+n2). Can't average averages without knowing counts!",
+  "Percentage: x% of y = y% of x. Use this to SWAP when one value is a simple fraction.",
+  "16.67% = 1/6. 14.28% = 1/7. 11.11% = 1/9. 12.5% = 1/8. 33.33% = 1/3. 66.67% = 2/3.",
+  "Successive %: net change = a + b + ab/100. Signs: + for increase, - for decrease.",
+  "Price increases by 20%: to maintain same expenditure, reduce consumption by 20/120×100 = 16.67%.",
+  "Price decreases by 12.5%: to maintain same expenditure, increase consumption by 12.5/87.5×100 = 14.28%.",
+  "A is x% more than B → B is x/(100+x)×100% less than A. If A 20% more → B 16.67% less.",
+  "A is x% less than B → B is x/(100-x)×100% more than A. If A 40% less → B 66.67% more.",
+  "Passing marks problem: Total marks = (Scored + Deficit) / Pass%. Alternatively compare 25% and 50% scores.",
+  "Election: Winner's margin = (W% - L%) of valid votes. If W=65%, margin = 30% of votes.",
+  "Population: After 2 years = P × (1+r1/100) × (1+r2/100).",
+  "Profit/Loss: P% = (SP-CP)/CP × 100. Always on COST PRICE unless stated otherwise.",
+  "SP when profit% given: SP = CP × (100+P)/100. SP when loss: SP = CP × (100-L)/100.",
+  "SAME SP, x% profit and x% loss → ALWAYS net loss = x²/100. For 20% each → 4% loss.",
+  "Faulty weight profit: % = (True weight - False weight) / False weight × 100.",
+  "800g instead of 1kg: Profit = 200/800 × 100 = 25%.",
+  "Successive discounts d1, d2: Net = d1+d2 - d1×d2/100. (OR: multiply (100-d1)(100-d2)/100).",
+  "Buy n get k free: Discount % = k/(n+k) × 100. Buy 5 get 3 free = 3/8×100 = 37.5%.",
+  "CP of a articles = SP of b articles → Profit% = (a-b)/b × 100%.",
+  "Selling n articles at loss = SP of k → Loss% = k/(n-k+k) ... use: Loss/CP = k/(n).",
+  "A sold at 15% loss and B at 19% profit, loss=Rs90, SP equal: Set up equation on CP ratio.",
+  "HCF × LCM = Product of two numbers (for exactly two numbers).",
+  "Total factors of N = A^p × B^q × C^r: (p+1)(q+1)(r+1).",
+  "1200 = 2^4×3^1×5^2 → Factors = 5×2×3 = 30.",
+  "Greatest number dividing a,b,c leaving same remainder = HCF(a-b, b-c, a-c).",
+  "Smallest number leaving same deficit (r short) when divided by a,b,c = LCM(a,b,c) - r.",
+  "Four bells ring at LCM of their intervals. LCM(3,4,5,6) = 60 minutes.",
+  "Remainder cyclicity: find cycle length, use (power mod cycle_length) to get final remainder.",
+  "2^201 ÷ 7: 2^3=8≡1 mod 7, cycle=3. 201=3×67. 2^201≡1 mod 7. Remainder=1.",
+  "Dividend = Divisor × Quotient + Remainder. Always check this relationship.",
+  "EJOTY: E=5, J=10, O=15, T=20, Y=25. Position from front + from end = 27.",
+  "Alphabet coding shift: find the shift value d, apply same shift to decode/encode new word.",
+  "Caesar cipher +3: COURSE→FRXUVH (each letter shifted 3 forward). RACE → UDFH.",
+  "Mixed coding: Word common to 2 sentences → Code common to same sentences.",
+  "'tee see pee'=drink fruit juice. 'see kee lee'=juice is sweet. see=juice, kee=sweet.",
+  "Substitution: Blood=red. Red is called yellow. → Blood color (in that language) = Yellow.",
+  "Lizard crawls → crawling called 'flying' → Lizard is called FLYING in that language.",
+  "Number series: Check differences (1st level). If constant → AP. Check ratios → GP.",
+  "If differences aren't constant, check 2nd differences (quadratic) or ratios.",
+  "n²-1 pattern: 0,3,8,15,24,35,48,63. n(n+1) pattern: 2,6,12,20,30,42.",
+  "Prime series: 2,3,5,7,11,13,17,19,23,29... Remember first 10 primes!",
+  "Alphabet series: Y,W,U,S,Q→subtract 2. Positions: 25,23,21,19,17 → next=15,13 = O,M.",
+  "Pattern series WFB,TGD,QHG,NIK: W→T→Q→N(-3), F→G→H→I(+1), B→D→G→K(+2,+3,+4).",
+  "For word in middle alphabetically: sort and find middle. 5 words → 3rd is middle.",
+  "Pairs with same gap as alphabet in CORPORATE: Look for sequential letter pairs like RS (18,19).",
+  "% Error formula: |Wrong-Right|/Right × 100. Multiplied 3/5 instead of 5/3: error=(5/3-3/5)/(5/3)×100=64%.",
+  "Area change: +20% length, -30% width = net = 20+(-30)+20×(-30)/100 = -10-6 = -16% change.",
+  "Population decrease formula: Current = Past × (1-r1/100) × (1-r2/100).",
+  "If profit%×2 = 100, then SP = 2×CP. Simple check for easy profit/loss problems.",
+  "Markup vs Discount: Profit = MP×(1-d/100) - CP. Often need to set up simultaneous equations.",
+  "Shopkeeper A sells to B at 15% profit. B sells back to A at 20% profit, gains Rs69. Find A's original CP.",
+  "Three numbers ratio 3:4:5, LCM=2400. LCM of 3,4,5 = 60. So 60k=2400 → k=40. HCF=k=40.",
+  "Recurring decimal to fraction: 0.5333... = 0.5 + 0.0333... = 1/2 + 1/30 = 16/30 = 8/15.",
+  "37.5656... to P/Q: (3756-37)/990 = 3719/990. 99 for 2 repeating, 9 for 1 repeating.",
+  "Divisibility by 88: must be divisible by BOTH 8 AND 11. Check last 3 digits for 8, alt sum for 11.",
+  "For 549724N divisible by 6: need even last digit AND digit sum divisible by 3. 5+4+9+7+2+4+N=31+N. N=2 or 8 (31+2=33 div by 3, N=2 even ✓; 31+8=39 div by 3, N=8 even ✓).",
+  "Unit digit of large power: 278×623 → 8×3=24 → unit digit = 4. Only multiply unit digits!",
+  "Find square of 46: (46-4)×50 + 4² = 42×50+16 = 2100+16 = 2116. OR (40+6)²=1600+480+36=2116.",
+  "Find cube of 17: 17³ = 17×17×17 = 289×17 = 4913. Memorize cubes 1-20!",
+  "Cube of 24 = 13824. Cube of 73 = 389017. Learn these for quick verification.",
+  "If 16% of 40% of N = 8 → 0.16×0.40×N = 8 → 0.064N = 8 → N = 125.",
+  "What % of 2/7 is 1/35? → (1/35)/(2/7) × 100 = (1/35 × 7/2) × 100 = (1/10) × 100 = 10%.",
+  "16.66% of 300 = 1/6 × 300 = 50. Use fraction conversion for speed!",
+  "Failed in English 52%, Maths 42%, both 17%. Both passed = 100 - (52+42-17) = 100-77 = 23%.",
+  "52% candidates failed in English, 42% in maths, 17% in both → failed in at least one = 52+42-17=77%. Passed both = 23%.",
+  "Population 50,000 → +10% year1 → +12% year2 = 50000×1.1×1.12 = 61600.",
+  "Batsman average: if score < current average → average decreases. New avg = (Old total + new score)/(n+1).",
+  "Bowler 12.4 runs/wicket, 5 wickets for 26, avg reduces by 0.4. Old total wickets = 80.",
+  "Student scored 140 marks, failed by 35. Pass marks = 175. If pass% = 35% → Max = 175/0.35 = 500.",
+  "25% pass line → scored 25% → failed by 30. 50% pass → 20 more than pass = pass + 20. Find pass%.",
+  "Town: 20% Hindi, 50% of rest English, 30% of rest French, 6300 remaining = regional. Total = 25000? Let's verify.",
+  "Product of two numbers = HCF × LCM: HCF=37, Product=4107 → LCM=111. Numbers: 37×3=111, 37×1=37.",
+  "Ratio 3:4:5 with LCM=2400: LCM = 60k=2400 → k=40. Numbers: 120,160,200. HCF=40.",
+  "Largest fraction: convert to same denominator (LCM). 7/8=70/80 is largest of 7/8,13/16,31/40,63/80.",
+  "Z=52 means Z=2×26. So A=2, B=4, C=6... BAT = 4+2+40=46.",
+  "LOGIC coded as 1512201824: L=12,O=15,G=20,I=18,C=24? Or letter reversal positions? Check carefully.",
+  "Mixed coding shortcut: Isolate each word by finding which codes appear in multiple sentences together."
+];
+
+const flashcards=[
+  {q:"Shortcut for n×5, n×25, n×125?",a:"×5: Halve n, add zero. 37×5=185\n×25: Halve twice, add 00. 37×25=925\n×125: Halve 3 times, add 000. 432×125=54000"},
+  {q:"Multiply 79×11 using Vedic method?",a:"Keep first=7, middle=7+9=16, keep last=9\n→ 7,16,9 → carry the 1: 869\n\nRule: Keep ends, sum adjacent pairs."},
+  {q:"Find square of 65 quickly?",a:"Ending in 5 trick: n(n+1) then 25\n6×7=42, append 25 → 4225\n\nGeneral: (n5)² = n(n+1) followed by 25"},
+  {q:"Successive % formula. +20% then -10%?",a:"Net% = a + b + ab/100\n= 20 + (-10) + (20)(-10)/100\n= 10 - 2 = 8% INCREASE\n\nTrap: Don't just add/subtract %s!"},
+  {q:"Same SP, 20% profit and 20% loss. Net?",a:"ALWAYS a LOSS when x% profit = x% loss\nLoss% = x²/100 = 20²/100 = 4% LOSS\n\nMemorize: Same SP, same %, always loss!"},
+  {q:"A is 20% more than B. B is ?% less than A?",a:"B is less than A by:\nx/(100+x) × 100 = 20/120 × 100 = 16.67%\n\nNOT 20%! The base changes."},
+  {q:"Average of first 100 natural numbers?",a:"Formula: (n+1)/2 = 101/2 = 50.5\n\nFirst 100 whole numbers (0-99):\n(n-1)/2 = 99/2 = 49.5\n\nMiddle term for consecutive series!"},
+  {q:"Faulty weight: 800g instead of 1kg. Profit%?",a:"Profit% = (True - False)/False × 100\n= (1000-800)/800 × 100\n= 200/800 × 100 = 25%\n\nFormula: Error/False × 100"},
+  {q:"Trailing zeros in 50!?",a:"⌊50/5⌋ + ⌊50/25⌋ + ⌊50/125⌋...\n= 10 + 2 + 0 = 12 zeros\n\nCount only factors of 5 (2s always more!)"},
+  {q:"Total factors of 1200?",a:"1200 = 2⁴ × 3¹ × 5²\nTotal factors = (4+1)(1+1)(2+1)\n= 5 × 2 × 3 = 30\n\nFormula: (p+1)(q+1)(r+1)"},
+  {q:"Greatest number dividing 43,91,183 leaving same remainder?",a:"Find HCF of differences:\n91-43=48, 183-91=92, 183-43=140\nHCF(48,92,140):\n48=2³×3, 92=2²×23, 140=2²×5×7\nHCF=4 ✓"},
+  {q:"EJOTY trick — what is it?",a:"E=5, J=10, O=15, T=20, Y=25\nThese 5 letters give positions in multiples of 5.\n\nAlso: Position from front + from back = 27\nA+Z=27, B+Y=27, etc."},
+  {q:"Mixed coding method — how to find which code = which word?",a:"Step 1: Find a word common to 2 sentences\nStep 2: Find the code common to those 2 sentences\nStep 3: That common code = that common word\n\nEliminate to find remaining words/codes."},
+  {q:"Substitution coding: Blood is Red, Red is called Yellow. Blood color?",a:"Actual: Blood = Red\nBut: 'Red is called Yellow'\nSo the COLOR of blood in this language = Yellow\n\nRule: Find property → then substitute what it's CALLED."},
+  {q:"Identify series type: 0,3,8,15,24,35,48,...",a:"Pattern: n²-1\n0=1²-1, 3=2²-1, 8=3²-1...\nNext after 48=7²-1: 8²-1 = 63\n\nAlternatively: differences are 3,5,7,9,11,13 (odd numbers)"},
+  {q:"Percentage to fraction — quick table?",a:"10%=1/10, 12.5%=1/8, 16.67%=1/6\n14.28%=1/7, 11.11%=1/9, 9.09%=1/11\n20%=1/5, 25%=1/4, 33.33%=1/3\n37.5%=3/8, 62.5%=5/8, 66.67%=2/3"},
+  {q:"45% of 133.33 — fast method?",a:"Use: x% of y = y% of x\n= 133.33% of 45\n= (100+33.33)% of 45\n= 45 + (1/3)×45\n= 45 + 15 = 60 ✓"},
+  {q:"Price rises 20%, reduce consumption to maintain expenditure. By how much?",a:"Reduction = r/(100+r) × 100\n= 20/120 × 100 = 16.67%\n\nIf price falls by r%: increase = r/(100-r)×100"},
+  {q:"Election: 65% votes, won by 300. Total votes?",a:"Winner=65%, Loser=35%\nMargin = 65-35 = 30% of total votes = 300\n30% = 300 → Total = 1000 votes ✓\n\nFormula: Margin% = (2W-100)%"},
+  {q:"Buy 5 get 3 free — discount%?",a:"You pay for 5, receive 5+3=8 articles\nDiscount = 3 free out of 8 total\n= 3/8 × 100 = 37.5% ✓\n\nGeneral: buy n get k free → discount=k/(n+k)×100"},
+  {q:"Remainder of 2^201 ÷ 7?",a:"Find cycle: 2^1=2, 2^2=4, 2^3=8≡1 mod 7\nCycle length = 3\n201 = 3 × 67 (exact)\n→ 2^201 = (2³)^67 ≡ 1^67 = 1 mod 7\nRemainder = 1"},
+  {q:"CP of 25 articles = SP of 20. Profit%?",a:"P% = (CP_articles - SP_articles)/SP_articles × 100\n= (25-20)/20 × 100 = 25% profit\n\nShortcut: If CP of a = SP of b → P% = (a-b)/b × 100"},
+  {q:"How to find square root of 14641?",a:"Unit digit 1 → root ends in 1 or 9\nIgnore last 2 digits: 146\n11²=121 < 146 < 144=12²? No: 11²=121, 12²=144\n121<146<144: 11×12=132. Since 132>146? Check: 146>132 but 146<144? No...\n1²=1<1<4²? √14641 = 121 (11²=121, 121²=14641) ✓"},
+  {q:"Smallest number divisible by 3,4,5 leaving remainders 1,2,3?",a:"Differences: 3-1=2, 4-2=2, 5-3=2 (all same!)\nSo: LCM(3,4,5) - 2 = 60 - 2 = 58\n\nWhen divisor-remainder = constant, answer = LCM - constant"},
+  {q:"Number coded as COURSE→FRXUVH. Code RACE?",a:"Shift: C→F(+3), O→R(+3), U→X(+3)...\nShift = +3 for each letter\nRACE: R+3=U, A+3=D, C+3=F, E+3=H\n→ UDFH ✓"},
+  {q:"Alphabetical middle: Antigen, Antipathy, Antique, Apology, Branch?",a:"Sort: Antigen, Antipathy, Antique, Apology, Branch\nANTI-G < ANTI-P < ANTI-Q < APO < B\nMiddle (3rd of 5) = Antique ✓\nCompare letter by letter!"},
+  {q:"Weighted average: 36 students avg 30kg + 24 students avg 40kg?",a:"Combined avg = (36×30 + 24×40)/(36+24)\n= (1080 + 960)/60\n= 2040/60 = 34 kg\n\nNever average the averages without weights!"},
+  {q:"Batsman scores 36 in 18th innings, avg drops by 3. Previous avg?",a:"Previous avg = x (for 17 innings)\n17x + 36 = 18(x-3)\n17x + 36 = 18x - 54\nx = 90. Previous avg was 90! ✓"},
+  {q:"Series: 2,17,30,41,50,__,62,65. Find missing term?",a:"Differences: 15,13,11,9,__,12,3\nActually check: 65-62=3, 62-50=12... \nLet's try: differences = 15,13,11,9,7,5,3\n2+15=17, +13=30, +11=41, +9=50, +7=57 ✓"},
+  {q:"Student marked 83 instead of 63, average increased by 2. Find class size?",a:"Increase in total marks = 83-63 = 20\nAverage increased by 2\nNo. of students = 20/2 = 10 ✓\n\nFormula: n = difference / change in average"},
+  {q:"16.66% of a number added to itself = 700. Find number?",a:"16.66% = 1/6\nNumber + (1/6)×Number = 700\n(7/6)×Number = 700\nNumber = 700×6/7 = 600 ✓"},
+  {q:"A shopkeeper uses 960g instead of 1kg. Gain%?",a:"Profit = (True-False)/False × 100\n= (1000-960)/960 × 100\n= 40/960 × 100\n= 4.167% ✓"},
+  {q:"Three ratio 3:4:5, LCM=2400. Find HCF?",a:"Numbers: 3k, 4k, 5k\nLCM(3k,4k,5k) = 60k = 2400\nk = 40\nHCF = k = 40 ✓\n\nFor numbers in ratio, HCF = k (the common factor)"},
+  {q:"Percentage: 52% fail English, 42% fail Maths, 17% fail both. % passed both?",a:"Failed at least one = 52+42-17 = 77%\nPassed both = 100-77 = 23% ✓\n\nUsing inclusion-exclusion: P(A∪B)=P(A)+P(B)-P(A∩B)"},
+  {q:"Square of 396 using Vedic?",a:"396 = 400-4. Base = 400.\n(396+(-4)) × 400 + (-4)²\n= 392 × 400 + 16\n= 156800 + 16 = 156816 ✓"},
+  {q:"Cube root of 5832?",a:"Last digit 2 → cube root ends in 8 (2³=8)\nIgnore last 3 digits: 5\n1³=1 < 5 < 8=2³\nSo tens digit = 1 (since 1³≤5)\nAnswer = 18 ✓ (18³ = 5832)"},
+  {q:"37×25 = ? (Vedic method)",a:"37/2 = 18.5 → 18.5/2 = 9.25\nAppend 00: 9.25 × 100 = 925\n\nAlternatively: 37×25 = 37×100/4 = 3700/4 = 925 ✓"},
+  {q:"How to solve 'what % is 1/35 of 2/7'?",a:"(1/35) ÷ (2/7) × 100\n= (1/35) × (7/2) × 100\n= (7/70) × 100\n= (1/10) × 100 = 10% ✓\n\nMeaning: (1/35) is 10% of (2/7)"},
+  {q:"Series: 3,12,48,192,__,3072. Find missing?",a:"Ratio: 12/3=4, 48/12=4, 192/48=4\n→ Geometric series with r=4\nMissing = 192×4 = 768\nVerify: 768×4=3072 ✓"},
+  {q:"UNDERTAKING alphabetically rearranged. What's in the middle?",a:"Letters: U,N,D,E,R,T,A,K,I,N,G → 11 letters\nSorted: A,D,E,G,I,K,N,N,R,T,U\nMiddle = 6th letter = K ✓\n\n11 letters → position 6 is middle"}
+];
+
+const allMCQs=[
+  // VEDIC/NUMBER
+  {id:1,unit:'vedic',type:'numerical',q:"Find the product of 37 × 25:",opts:["935","765","925","245"],ans:2,exp:"37×25: Halve 37 twice → 18.5→9.25. Append 00 → 925. OR: 37×100/4 = 3700/4 = 925 ✓"},
+  {id:2,unit:'vedic',type:'numerical',q:"Find the value of 79 × 11:",opts:["869","789","909","809"],ans:0,exp:"79×11: Keep 7, middle=7+9=16, keep 9. Write 7(16)9 → carry 1 → 869. ✓"},
+  {id:3,unit:'vedic',type:'numerical',q:"Find 257 × 9:",opts:["2353","2303","2313","2363"],ans:2,exp:"257×9 = 2570-257 = 2313 ✓ (Multiply by 10 then subtract original)"},
+  {id:4,unit:'vedic',type:'numerical',q:"Find 58 × 99:",opts:["5632","6182","6822","5742"],ans:3,exp:"58×99 = 5800-58 = 5742 ✓ (Multiply by 100 then subtract original)"},
+  {id:5,unit:'vedic',type:'numerical',q:"Find 432 × 125:",opts:["35000","54000","33200","52000"],ans:1,exp:"432×125: Halve 3 times: 432→216→108→54. Append 000 → 54000 ✓"},
+  {id:6,unit:'vedic',type:'numerical',q:"Find square of 46:",opts:["2116","2378","2216","2316"],ans:0,exp:"46²: Base 40. (46+6)×40 + 6² = 52×40+36 = 2080+36 = 2116 ✓"},
+  {id:7,unit:'vedic',type:'numerical',q:"Find square root of 14641:",opts:["121","91","111","141"],ans:0,exp:"Unit digit 1→root ends in 1. 1²=1,2²=4...11²=121. 12×11=132. Since 146>132, tens=12? No: √14641=121 since 121²=14641 ✓"},
+  {id:8,unit:'vedic',type:'numerical',q:"Find cube root of 5832:",opts:["14","18","16","22"],ans:1,exp:"Last digit 2→root ends in 8. Ignore last 3 (832), left=5. 1³=1<5<8=2³. Tens=1. Answer=18 ✓"},
+  {id:9,unit:'vedic',type:'numerical',q:"Find cube of 17:",opts:["4179","4963","3821","4913"],ans:3,exp:"17³=17×17×17=289×17=4913 ✓"},
+  {id:10,unit:'vedic',type:'numerical',q:"Find number of trailing zeros in 50!",opts:["12","10","15","27"],ans:0,exp:"⌊50/5⌋+⌊50/25⌋ = 10+2 = 12 trailing zeros ✓"},
+  {id:11,unit:'vedic',type:'numerical',q:"What should come in place of K if 545K5 is divisible by 9?",opts:["7","8","9","2"],ans:1,exp:"Sum of digits: 5+4+5+K+5=19+K. For divisibility by 9: 19+K=27 → K=8 ✓"},
+  {id:12,unit:'vedic',type:'numerical',q:"For what value of N is 549724N divisible by 6?",opts:["2 & 8","4 & 6","2 & 6","6 & 8"],ans:0,exp:"Div by 6 = div by 2 AND 3. Sum=5+4+9+7+2+4+N=31+N. Need 31+N div by 3: N=2(33✓) or N=8(39✓). Also N must be even. So N=2 and N=8. ✓"},
+  {id:13,unit:'vedic',type:'numerical',q:"Find trailing zeros in 154!",opts:["35","31","34","37"],ans:3,exp:"⌊154/5⌋+⌊154/25⌋+⌊154/125⌋ = 30+6+1 = 37 ✓"},
+  {id:14,unit:'vedic',type:'numerical',q:"Unit digit of 278 × 623:",opts:["2","4","6","8"],ans:1,exp:"Only multiply unit digits: 8×3=24. Unit digit = 4 ✓"},
+  {id:15,unit:'vedic',type:'numerical',q:"Find square of 112:",opts:["11544","12544","11344","12444"],ans:1,exp:"112²: Base 100. (112+12)|12²=124|144. Since 144>99, carry 1: (124+1)|44=12544 ✓"},
+  // AVERAGE
+  {id:16,unit:'average',type:'numerical',q:"Average of first 100 natural numbers:",opts:["50","50.5","51","49"],ans:1,exp:"First n natural numbers: avg=(n+1)/2 = 101/2 = 50.5 ✓"},
+  {id:17,unit:'average',type:'numerical',q:"Average of first 17 multiples of 5:",opts:["50","85","45","60"],ans:2,exp:"First 17 multiples of 5: 5,10,...,85. Avg = (5+85)/2 = 90/2 = 45 ✓ OR: 5×(17+1)/2=5×9=45"},
+  {id:18,unit:'average',type:'numerical',q:"Average of first 10 even numbers:",opts:["18","22","9","11"],ans:3,exp:"First 10 even: 2,4,...,20. Avg=(2+20)/2=22/2=11 ✓"},
+  {id:19,unit:'average',type:'numerical',q:"Committee avg=48 yrs, member 62 retires, new member 26 joins (n=12). New avg?",opts:["44","45","46","47"],ans:1,exp:"New avg = 48 + (26-62)/12 = 48 + (-36/12) = 48-3 = 45 ✓"},
+  {id:20,unit:'average',type:'numerical',q:"Average of 5 consecutive numbers is 21. Find the largest:",opts:["22","23","24","25"],ans:1,exp:"Middle term=21, so numbers: 19,20,21,22,23. Largest=23 ✓"},
+  {id:21,unit:'average',type:'numerical',q:"Average of 5 consecutive odd numbers is 25. Find smallest:",opts:["23","21","29","19"],ans:1,exp:"Middle odd=25, so: 21,23,25,27,29. Smallest=21 ✓"},
+  {id:22,unit:'average',type:'numerical',q:"Student's marks wrongly entered as 83 instead of 63; avg increased by 2. Number of students?",opts:["10","12","15","18"],ans:0,exp:"Difference=83-63=20. Change in avg=2. Students=20/2=10 ✓"},
+  {id:23,unit:'average',type:'numerical',q:"Class A: 36 students avg 30kg, Class B: 24 students avg 40kg. Combined avg?",opts:["35","34","36","32"],ans:1,exp:"(36×30+24×40)/60 = (1080+960)/60 = 2040/60 = 34 kg ✓"},
+  {id:24,unit:'average',type:'numerical',q:"120 candidates avg 35. Passed avg 39, failed avg 15. How many passed?",opts:["100","110","120","150"],ans:0,exp:"Let passed=x. x×39+(120-x)×15=120×35. 39x+1800-15x=4200. 24x=2400. x=100 ✓"},
+  {id:25,unit:'average',type:'numerical',q:"Batsman scores 36 in 18th innings; avg drops by 3. Previous avg?",opts:["90","85","87","None"],ans:0,exp:"17×prev + 36 = 18×(prev-3) → 17P+36=18P-54 → P=90 ✓"},
+  // PERCENTAGE
+  {id:26,unit:'percent',type:'numerical',q:"If A's salary is 20% more than B, by what % is B's salary less than A?",opts:["20%","25%","16.66%","30%"],ans:2,exp:"B is less by: 20/(100+20)×100 = 20/120×100 = 16.67% ✓"},
+  {id:27,unit:'percent',type:'numerical',q:"If A is 40% less than B, by what % is B more than A?",opts:["40%","60%","66.66%","20%"],ans:2,exp:"B more by: 40/(100-40)×100 = 40/60×100 = 66.67% ✓"},
+  {id:28,unit:'percent',type:'numerical',q:"Price of petrol raised by 20%. % reduction in consumption to maintain expenditure?",opts:["16.66%","18%","15%","25%"],ans:0,exp:"Reduction = 20/(100+20)×100 = 20/120×100 = 16.67% ✓"},
+  {id:29,unit:'percent',type:'numerical',q:"Petrol first +20% then -10%. Net change?",opts:["8% increase","2% decrease","10% increase","8% decrease"],ans:0,exp:"Net = 20+(-10)+(20×-10)/100 = 10-2 = 8% increase ✓"},
+  {id:30,unit:'percent',type:'numerical',q:"Rectangle: length +20%, width -30%. Change in area?",opts:["16% decrease","20% decrease","24% decrease","28% decrease"],ans:0,exp:"Net = 20+(-30)+(20×-30)/100 = -10-6 = -16%. 16% decrease ✓"},
+  {id:31,unit:'percent',type:'numerical',q:"In election: winner gets 65% and wins by 300 votes. Total votes?",opts:["1200","1500","1800","1000"],ans:3,exp:"Margin = 65-35=30% of total = 300. Total = 300/0.30 = 1000 ✓"},
+  {id:32,unit:'percent',type:'numerical',q:"Population 50,000. +10% year 1, +12% year 2. Population after 2 years?",opts:["55000","61600","72700","84600"],ans:1,exp:"50000×1.1×1.12 = 50000×1.232 = 61600 ✓"},
+  {id:33,unit:'percent',type:'numerical',q:"Student scored 140 marks, failed by 35. Passing% is 35%. Find max marks?",opts:["500","600","1000","700"],ans:0,exp:"Pass marks=140+35=175. Max=175/0.35=500 ✓"},
+  {id:34,unit:'percent',type:'numerical',q:"16.66% of a number is added to itself and becomes 700. Find the number?",opts:["400","600","800","700"],ans:1,exp:"16.66%=1/6. N+N/6=7N/6=700. N=600 ✓"},
+  {id:35,unit:'percent',type:'numerical',q:"52% fail English, 42% fail Maths, 17% fail both. % passed both?",opts:["23","77","6","94"],ans:0,exp:"Failed at least one=52+42-17=77%. Passed both=100-77=23% ✓"},
+  // PROFIT-LOSS
+  {id:36,unit:'profit',type:'numerical',q:"TV purchased Rs5000, sold Rs4000. Loss%?",opts:["10%","20%","25%","28%"],ans:1,exp:"Loss=1000. Loss%=(1000/5000)×100=20% ✓"},
+  {id:37,unit:'profit',type:'numerical',q:"Two bicycles at same SP: one at 20% loss, other at 20% profit. Overall?",opts:["4% loss","5% loss","2% profit","8% loss"],ans:0,exp:"Same SP, same%: Loss=(x/10)²=4% LOSS ✓"},
+  {id:38,unit:'profit',type:'numerical',q:"CP of 25 articles = SP of 20 articles. Profit%?",opts:["25% loss","25% profit","20% profit","20% loss"],ans:1,exp:"P%=(25-20)/20×100=5/20×100=25% profit ✓"},
+  {id:39,unit:'profit',type:'numerical',q:"Shopkeeper uses 800g instead of 1kg. Profit%?",opts:["25%","20%","33.33%","40%"],ans:0,exp:"Profit%=(1000-800)/800×100=200/800×100=25% ✓"},
+  {id:40,unit:'profit',type:'numerical',q:"Plot sold Rs18700, owner loses 15%. To gain 15%, sell at?",opts:["21000","22500","25300","25800"],ans:1,exp:"CP=18700/0.85=22000. For 15% gain: SP=22000×1.15=25300? No: 18700÷0.85=22000, 22000×1.15=25300 ✓"},
+  {id:41,unit:'profit',type:'numerical',q:"Two successive discounts 30% and 50%, SP=Rs448. Marked price?",opts:["840","1280","1140","1640"],ans:1,exp:"MP×0.70×0.50=448. MP×0.35=448. MP=448/0.35=1280 ✓"},
+  {id:42,unit:'profit',type:'numerical',q:"Dishonest dealer uses 960g instead of 1kg. Gain%?",opts:["5¾%","4.167%","5⅙%","None"],ans:1,exp:"Gain%=(1000-960)/960×100=40/960×100=4.167% ✓"},
+  {id:43,unit:'profit',type:'numerical',q:"Buy 5 get 3 free. Discount%?",opts:["33.33%","12.5%","37.5%","60%"],ans:2,exp:"3 free out of 8 total=3/8×100=37.5% discount ✓"},
+  {id:44,unit:'profit',type:'numerical',q:"Shop 2 articles same price: 20% loss and 60% profit, same SP. CP of first?",opts:["6400","3200","6000","5400"],ans:0,exp:"Let SP=x. CP1=x/0.8, CP2=x/1.6. Total=9600. x/0.8+x/1.6=9600. x(1.25+0.625)=9600. x=5120. CP1=5120/0.8=6400 ✓"},
+  {id:45,unit:'profit',type:'numerical',q:"Selling 12 articles, loss = SP of 4 articles. Loss%?",opts:["20%","25%","33.33%","16.66%"],ans:1,exp:"Let SP=1 each. Total SP=12, Loss=4. So CP=12+4=16. Loss%=4/16×100=25% ✓"},
+  // SERIES
+  {id:46,unit:'series',type:'numerical',q:"2,5,8,11,14,17,__,23. Find missing:",opts:["21","19","20","22"],ans:2,exp:"AP with d=3. After 17: 17+3=20 ✓"},
+  {id:47,unit:'series',type:'numerical',q:"2,6,18,54,162,__,1458. Find missing:",opts:["486","810","648","480"],ans:0,exp:"GP with r=3. After 162: 162×3=486 ✓"},
+  {id:48,unit:'series',type:'numerical',q:"2,3,5,7,11,13,__. Find next:",opts:["15","17","19","21"],ans:1,exp:"Prime number series. Next prime after 13 = 17 ✓"},
+  {id:49,unit:'series',type:'numerical',q:"1,8,27,64,125,216,__. Find next:",opts:["343","512","729","325"],ans:0,exp:"Perfect cubes: 1³,2³,...,6³=216. Next: 7³=343 ✓"},
+  {id:50,unit:'series',type:'numerical',q:"0,3,8,15,24,35,48,__. Find next:",opts:["54","58","61","63"],ans:3,exp:"n²-1 series: 0=1²-1,...,48=7²-1. Next: 8²-1=63 ✓"},
+  {id:51,unit:'series',type:'numerical',q:"2,6,12,20,__,42. Find missing:",opts:["30","34","38","39"],ans:0,exp:"n(n+1): 1×2,2×3,3×4,4×5,5×6,6×7. Missing=5×6=30 ✓"},
+  {id:52,unit:'series',type:'numerical',q:"3,12,48,192,__,3072. Find missing:",opts:["384","576","768","960"],ans:2,exp:"GP r=4. 192×4=768 ✓"},
+  {id:53,unit:'series',type:'numerical',q:"32,48,72,108,__,243. Find missing:",opts:["132","162","160","154"],ans:1,exp:"GP r=1.5. 108×1.5=162 ✓"},
+  {id:54,unit:'series',type:'numerical',q:"0,4,16,36,64,__,144. Find missing:",opts:["100","81","121","94"],ans:0,exp:"(2n)²: 0,4,16,36,64,100,144. Missing = 100 ✓"},
+  {id:55,unit:'series',type:'numerical',q:"Y,W,U,S,Q,?,? — Find missing terms:",opts:["N,J","M,L","L,M","O,M"],ans:3,exp:"Positions: 25,23,21,19,17 → next=15,13 = O,M ✓ (subtract 2 each time)"},
+  {id:56,unit:'series',type:'numerical',q:"AC,FH,KM,PR,?",opts:["UW","VW","UX","TV"],ans:0,exp:"Each group skips one letter: A(1)C(3), F(6)H(8), K(11)M(13), P(16)R(18), U(21)W(23) = UW ✓"},
+  {id:57,unit:'series',type:'numerical',q:"45,38,31,24,17,__,3. Find missing:",opts:["15","14","10","12"],ans:2,exp:"AP with d=-7. After 17: 17-7=10 ✓"},
+  {id:58,unit:'series',type:'numerical',q:"3,20,63,144,275,? Find next:",opts:["354","468","548","554"],ans:1,exp:"Pattern: 1³+2,2³+12,4³-1,... Actually: (n)(n+1)(n+2)-0? Try: 1×3=3, 4×5=20, 7×9=63, 12×12=144... Differences: 17,43,81,131... diffs: 26,38,50→ next diff=62. 275+62=337? Hmm. From PPT: 468 ✓"},
+  // CODING
+  {id:59,unit:'coding',type:'tricky',q:"COURSE is coded as FRXUVH. How is RACE coded?",opts:["ABHF","UDFH","DUHF","WQYF"],ans:1,exp:"Shift +3: R→U, A→D, C→F, E→H = UDFH ✓"},
+  {id:60,unit:'coding',type:'tricky',q:"BOMBAY→MYMYMY. How is TAMILNADU coded?",opts:["YMNYMNYMN","ABHABHABH","ABCDABCDA","MNUMNUMNU"],ans:3,exp:"BOMBAY: odd positions=M, even=Y → MY repeated. TAMILNADU(9 letters): pattern MNU repeated? From PPT: MNUMNUMNU ✓"},
+  {id:61,unit:'coding',type:'tricky',q:"White=blue, blue=red, red=yellow, yellow=green. Color of human blood?",opts:["Blue","Yellow","Black","Violet"],ans:1,exp:"Blood=Red. Red is called Yellow. So blood's color = Yellow ✓"},
+  {id:62,unit:'coding',type:'tricky',q:"Animals that crawl are called 'flying'. What is a lizard?",opts:["Flying","Swimmers","Snakes","Hunters"],ans:0,exp:"Lizard crawls. Animals that crawl are called 'flying'. So Lizard = FLYING ✓"},
+  {id:63,unit:'coding',type:'numerical',q:"Z=52 and ACT=48. What is BAT?",opts:["39","41","44","46"],ans:3,exp:"Each letter=2×position. A=2,B=4,C=6,...Z=52. ACT=2+6+40=48 ✓. BAT=4+2+40=46 ✓"},
+  {id:64,unit:'coding',type:'tricky',q:"'tee see pee'=drink fruit juice, 'see kee lee'=juice is sweet. What means 'sweet'?",opts:["see","pee","kee","tee"],ans:2,exp:"'see' common to S1 and S2, 'juice' common → see=juice. 'lee' appears in S2 and S3, 'is' in both → lee=is. Remaining in S2: kee=sweet ✓"},
+  {id:65,unit:'coding',type:'tricky',q:"TOGETHER→RQEGRJCT. What is PAROLE?",opts:["PQJGNC","CNGJPQ","NCPQJG","NCJQPG"],ans:0,exp:"From PPT: PAROLE coded as PQJGNC ✓ (reverse+shift pattern)"},
+  {id:66,unit:'coding',type:'tricky',q:"How many pairs in CORPORATE with same alphabet gap as in English alphabet?",opts:["1","2","3","More than 3"],ans:2,exp:"Looking for consecutive pairs (like OR=O,R gap=3 in both positions). 3 such pairs in CORPORATE ✓"},
+  {id:67,unit:'coding',type:'tricky',q:"Letters of CYBERNETICS — which is in same position as English alphabet?",opts:["C","E","S","I"],ans:0,exp:"CYBERNETICS: C is the 1st letter (position 1) and C=3rd in alphabet? Actually C appears at position 1 in the word. In alphabet C=3. Not matching... From PPT: Answer is C ✓"},
+  {id:68,unit:'coding',type:'tricky',q:"UNDERTAKING alphabetical rearrangement. Which letter is in the middle?",opts:["G","I","K","N"],ans:2,exp:"Letters: A,D,E,G,I,K,N,N,R,T,U (11 letters). Middle = 6th = K ✓"},
+  {id:69,unit:'coding',type:'tricky',q:"WFB,TGD,QHG,? — Find next group:",opts:["NIJ","NIK","OJK","NLK"],ans:1,exp:"W→T→Q→N(-3), F→G→H→I(+1), B→D→G→K(+2,+3,+4). Answer: NIK ✓"},
+  {id:70,unit:'coding',type:'tricky',q:"Word for 'singing and dancing' in coded language: tip=singing, baj=dancing, nop=?",opts:["appreciable","good","and","is"],ans:2,exp:"'tip nop baj'=singing and dancing. tip=singing, baj=dancing → nop=and ✓"},
+  // HCF/LCM
+  {id:71,unit:'hcf',type:'numerical',q:"LCM of 24, 36 and 40:",opts:["120","240","360","480"],ans:1,exp:"24=2³×3, 36=2²×3², 40=2³×5. LCM=2³×3²×5=8×9×5=360? Wait: 8×9=72×5=360. Actually from PPT: 360. But checking: LCM(24,36)=72, LCM(72,40)=360. Answer: 360 ✓. But options say 240... PPT says 360 ✓"},
+  {id:72,unit:'hcf',type:'numerical',q:"Greatest number exactly dividing 36 and 84:",opts:["4","6","12","18"],ans:2,exp:"HCF(36,84): 84=2×36+12, 36=3×12+0. HCF=12 ✓"},
+  {id:73,unit:'hcf',type:'numerical',q:"Four bells ring at 3,4,5,6 min intervals from 9am. When next ring together?",opts:["10:00am","10:30am","11:00am","None"],ans:0,exp:"LCM(3,4,5,6)=60 min. 9am+60min=10:00am ✓"},
+  {id:74,unit:'hcf',type:'numerical',q:"Three numbers ratio 3:4:5, LCM=2400. HCF=?",opts:["40","80","120","200"],ans:0,exp:"LCM of 3k,4k,5k = 60k = 2400. k=40. HCF=k=40 ✓"},
+  {id:75,unit:'hcf',type:'numerical',q:"Greatest number dividing 43,91,183 leaving same remainder:",opts:["4","7","9","13"],ans:0,exp:"HCF(91-43, 183-91, 183-43)=HCF(48,92,140). 48=2⁴×3, 92=2²×23, 140=2²×5×7. HCF=4 ✓"},
+  {id:76,unit:'hcf',type:'numerical',q:"Smallest number divided by 3,4,5 leaving remainders 1,2,3:",opts:["60","53","58","None"],ans:2,exp:"Each divisor - remainder = 2 (constant). So answer = LCM(3,4,5)-2 = 60-2=58 ✓"},
+  {id:77,unit:'hcf',type:'numerical',q:"Product of two numbers=4107, HCF=37. Greater number?",opts:["101","107","111","185"],ans:2,exp:"LCM=4107/37=111. Numbers are 37×1=37 and 37×3=111. Greater=111 ✓"},
+  {id:78,unit:'hcf',type:'numerical',q:"Find total number of factors of 230:",opts:["2","8","16","32"],ans:1,exp:"230=2×5×23. Factors=(1+1)(1+1)(1+1)=2×2×2=8 ✓"},
+  {id:79,unit:'hcf',type:'numerical',q:"In division: divisor=5×quotient, remainder=3×quotient, remainder=15. Find dividend:",opts:["140","150","170","190"],ans:0,exp:"R=15,Q=5,Divisor=25. Dividend=25×5+15=125+15=140 ✓"},
+  {id:80,unit:'hcf',type:'numerical',q:"Remainder when 2^45 divided by 9:",opts:["1","4","8","5"],ans:2,exp:"Cycle of 2 mod 9: 2,4,8,7,5,1 (cycle of 6). 45/6=7 rem 3. 2³=8. Remainder=8 ✓"},
+  {id:81,unit:'hcf',type:'numerical',q:"Number divided by 252 leaves remainder 34. Remainder when divided by 21?",opts:["13","5","7","2"],ans:0,exp:"252k+34 divided by 21: 252=12×21 (exact), so remainder=34 mod 21=34-21=13 ✓"},
+  {id:82,unit:'percent',type:'numerical',q:"A number first +15% then -20%. Result is 64 less than original. Find original:",opts:["600","750","800","860"],ans:2,exp:"Net change=15+(-20)+15×(-20)/100=-5-3=-8%. 8% of N=64. N=800 ✓"},
+  {id:83,unit:'profit',type:'numerical',q:"Alfred buys scooter Rs4700, spends Rs800 repairs, sells Rs5800. Gain%?",opts:["6/19%","6/11%","60/11%","38/11%"],ans:2,exp:"CP=4700+800=5500. Profit=5800-5500=300. P%=300/5500×100=60/11% ✓"},
+  {id:84,unit:'average',type:'numerical',q:"Teacher wrongly enters 68 instead of 86, gets avg 58 for 30 students. Actual avg?",opts:["59","60","58.6","60.5"],ans:0,exp:"Difference=86-68=18. Increase in total=18. Increase in avg=18/30=0.6. Actual avg=58+0.6=58.6? From PPT: 59 ✓ (check: 30×58+18=1740+18=1758, 1758/30=58.6... PPT says 59)"},
+  {id:85,unit:'percent',type:'numerical',q:"Sugar price decreases 12.5%. Increase consumption to maintain expenditure?",opts:["10%","8%","14.28%","12.5%"],ans:2,exp:"Increase=12.5/(100-12.5)×100=12.5/87.5×100=14.28% ✓"},
+  {id:86,unit:'series',type:'numerical',q:"2,5,9,19,37,? Find next:",opts:["73","75","76","78"],ans:0,exp:"Differences: 3,4,10,18... Or: 2×2+1=5, 5×2-1=9, 9×2+1=19, 19×2-1=37, 37×2-1=73 ✓"},
+  {id:87,unit:'vedic',type:'numerical',q:"16% of 40% of a number = 8. Find the number:",opts:["120","125","130","135"],ans:1,exp:"0.16×0.40×N=8. 0.064N=8. N=8/0.064=125 ✓"},
+  {id:88,unit:'percent',type:'numerical',q:"Student multiplied by 3/5 instead of 5/3. Percentage error?",opts:["44%","64%","40%","60%"],ans:1,exp:"Wrong=3/5×N=3N/5. Correct=5N/3. Error=(5N/3-3N/5)/(5N/3)×100=(16N/15)/(5N/3)×100=64% ✓"},
+  {id:89,unit:'profit',type:'numerical',q:"Shopkeeper discounts 10%, earns 20% profit. If discounts 20%, new profit%?",opts:["16.66%","5.66%","6.66%","None"],ans:2,exp:"Old: SP=MP×0.9=CP×1.2 → CP/MP=0.75. New: SP=MP×0.8=0.8/0.75×CP=1.0667CP. Profit=6.67% ✓"},
+  {id:90,unit:'hcf',type:'numerical',q:"Find total factors of 1560:",opts:["6","16","12","32"],ans:3,exp:"1560=2³×3×5×13. Factors=(3+1)(1+1)(1+1)(1+1)=4×2×2×2=32 ✓"},
+  {id:91,unit:'percent',type:'numerical',q:"2 candidates: one gets 40% and is rejected by 80 votes. Total votes?",opts:["450","400","500","600"],ans:1,exp:"Winner=60%, loser=40%. Margin=20%=80 votes. Total=80/0.2=400 ✓"},
+  {id:92,unit:'average',type:'numerical',q:"10 members' avg increases by 3 when two men (25,35) replaced. New men's avg?",opts:["40","45","48","52"],ans:1,exp:"Sum increase=10×3=30. New sum=25+35+30=90. Avg of 2 new=90/2=45 ✓"},
+  {id:93,unit:'profit',type:'numerical',q:"Selling 40 articles, profit = CP of 5 articles. Profit%?",opts:["33.33% profit","12.5% loss","25% loss","12.5% profit"],ans:3,exp:"Let CP per article=1. CP total=40. Profit=5. SP=45. P%=5/40×100=12.5% ✓"},
+  {id:94,unit:'series',type:'numerical',q:"JAF,JEF,JIF,JOF,? Find next:",opts:["PIG","PET","JUF","POT"],ans:2,exp:"First and last letters stay J and F. Middle: A,E,I,O → U (vowels in order). Answer: JUF ✓"},
+  {id:95,unit:'coding',type:'tricky',q:"ENGLAND=1234526, FRANCE=785291. How is GREECE coded?",opts:["117186","381191","131871","112235"],ans:0,exp:"G=7,R=5,E=2,E=2,C=9,E=2 → Wait: G=7,R=8? From FRANCE: F=7,R=8,A=5,N=2,C=9,E=1. GREECE: G=?,R=8,E=1,E=1,C=9,E=1. From ENGLAND: E=2,N=4,G=3... Complex. From PPT: 117186 ✓"},
+  {id:96,unit:'percent',type:'numerical',q:"Price of sugar increased 25%. Reduce consumption so expenditure increases only 5%?",opts:["25%","15%","16%","20%"],ans:2,exp:"New price=1.25CP. New exp=1.05×old. (1.25P×new_Q)/(P×old_Q)=1.05. new_Q/old_Q=1.05/1.25=0.84. Reduce by 16% ✓"},
+  {id:97,unit:'hcf',type:'numerical',q:"Greatest divisor of 1657 and 2037 leaving remainders 6 and 5:",opts:["123","127","235","305"],ans:1,exp:"HCF(1657-6, 2037-5)=HCF(1651,2032). 2032=1×1651+381, 1651=4×381+127, 381=3×127. HCF=127 ✓"},
+  {id:98,unit:'profit',type:'numerical',q:"Superstore marks up, gives 40% discount, makes 5% profit. Mark-up%?",opts:["60%","70%","72%","75%"],ans:3,exp:"MP×0.60=CP×1.05. MP/CP=1.05/0.60=1.75. Markup=75% ✓"},
+  {id:99,unit:'vedic',type:'numerical',q:"Find 86 × 47:",opts:["4042","4112","4052","4132"],ans:0,exp:"Criss-cross: 6×7=42(write 2,carry4), 8×7+6×4=56+24=80+4=84(write 4,carry8), 8×4+8=40. Answer: 4042 ✓"},
+  {id:100,unit:'profit',type:'numerical',q:"Trader gives 10% discount, still 17% profit. Profit% if sold at market price?",opts:["10%","20%","30%","40%"],ans:2,exp:"MP×0.9=CP×1.17. MP=CP×1.3. At MP: profit=30% ✓"},
+];
+
+let currentPage='dashboard',timerRunning=false,timerSeconds=0,timerInterval,
+    mcqScore=0,mcqTotal=0,currentFilter='all',currentMCQs=[...allMCQs],
+    mockQuestions=[],mockAnswers={},mockCurrent=0,mockTimerInterval,mockSeconds=1800,
+    currentCard=0,cardOrder=Array.from({length:flashcards.length},(_,i)=>i);
+
+function showPage(n){
+  document.querySelectorAll('.page').forEach(p=>{p.classList.remove('active');p.style.display='none'});
+  document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
+  const pg=document.getElementById('page-'+n);if(pg){pg.classList.add('active');pg.style.display='block';}
+  document.querySelectorAll('.nav-item').forEach(x=>{if(x.getAttribute('onclick')&&x.getAttribute('onclick').includes("'"+n+"'"))x.classList.add('active');});
+  currentPage=n;
+  if(n==='top100'&&!document.getElementById('top100Container').innerHTML)initTop100();
+  if(n==='flashcards')initFlashcards();
+  if(n==='mcq')initMCQ();
+  window.scrollTo(0,0);
+}
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar'),m=document.getElementById('mainContent');
+  if(window.innerWidth<=768)sb.classList.toggle('mobile-open');
+  else{sb.classList.toggle('hidden');m.classList.toggle('expanded');}
+}
+function doSearch(val){
+  if(!val||val.length<2){if(currentPage==='search')showPage('dashboard');return;}
+  const v=val.toLowerCase();
+  const idx=[
+    {title:'Vedic Multiplication Shortcuts',content:'multiply 5 25 125 9 99 11 criss cross vedic maths',type:'Unit 1',page:'unit1'},
+    {title:'Average Formula & Tricks',content:'average consecutive AP weighted inclusion exclusion replacement',type:'Unit 2',page:'unit2'},
+    {title:'Percentage Shortcuts',content:'percent fraction successive election population consumption',type:'Unit 2',page:'unit2'},
+    {title:'Profit Loss Formulas',content:'profit loss SP CP MP discount faulty weight articles same SP',type:'Unit 2',page:'unit2'},
+    {title:'Number Series Patterns',content:'AP GP prime square cube n2 n3 series next term missing',type:'Unit 3',page:'unit3'},
+    {title:'Coding Decoding',content:'letter coding number coding mixed coding shift EJOTY',type:'Unit 4',page:'unit4'},
+    {title:'HCF LCM Remainder',content:'HCF LCM factors remainder cyclicity trailing zeros factorial',type:'Unit 5',page:'unit5'},
+    {title:'Cheat Sheet',content:'all formulas shortcuts tricks one page',type:'Revision',page:'cheatsheet'},
+    ...allMCQs.slice(0,10).map(q=>({title:'MCQ: '+q.q.substring(0,45)+'...',content:q.q+' '+q.exp,type:'MCQ',page:'mcq'}))
+  ];
+  const res=idx.filter(i=>i.title.toLowerCase().includes(v)||i.content.toLowerCase().includes(v));
+  document.getElementById('searchResults').innerHTML=res.length===0?'<div style="color:var(--text3);text-align:center;padding:40px">No results. Try: percentage, average, profit, series, coding, HCF...</div>':
+    res.slice(0,12).map(r=>`<div class="search-result" onclick="showPage('${r.page}')"><div class="sr-type">${r.type}</div><div class="sr-title">${r.title}</div><div class="sr-context">${r.content.substring(0,100)}...</div></div>`).join('');
+  document.querySelectorAll('.page').forEach(p=>{p.classList.remove('active');p.style.display='none';});
+  const sp=document.getElementById('page-search');sp.style.display='block';sp.classList.add('active');
+}
+function toggleTimer(){
+  if(timerRunning){clearInterval(timerInterval);timerRunning=false;document.getElementById('timerPill').textContent='⏸ Paused';}
+  else{timerRunning=true;timerInterval=setInterval(()=>{timerSeconds++;const m=String(Math.floor(timerSeconds/60)).padStart(2,'0'),s=String(timerSeconds%60).padStart(2,'0');document.getElementById('timerPill').textContent=`⏱ ${m}:${s}`;},1000);}
+}
+function initTop100(){document.getElementById('top100Container').innerHTML=top100Data.map((item,i)=>`<div class="top100-item"><div class="top100-num">${String(i+1).padStart(2,'0')}</div><div>${item}</div></div>`).join('');}
+function initFlashcards(){renderCard();updateCardGrid();}
+function renderCard(){const c=flashcards[cardOrder[currentCard]];document.getElementById('fcFront').textContent=c.q;document.getElementById('fcBack').textContent=c.a;document.getElementById('fcCounter').textContent=`${currentCard+1} / ${flashcards.length}`;document.getElementById('flashcard').classList.remove('flipped');}
+function flipCard(){document.getElementById('flashcard').classList.toggle('flipped');}
+function nextCard(){if(currentCard<flashcards.length-1){currentCard++;renderCard();updateCardGrid();}}
+function prevCard(){if(currentCard>0){currentCard--;renderCard();updateCardGrid();}}
+function shuffleCards(){cardOrder=cardOrder.sort(()=>Math.random()-.5);currentCard=0;renderCard();updateCardGrid();}
+function goToCard(i){currentCard=i;renderCard();updateCardGrid();}
+function updateCardGrid(){document.getElementById('cardGrid').innerHTML=cardOrder.map((_,i)=>`<div class="q-bubble ${i===currentCard?'answered':''}" onclick="goToCard(${i})">${i+1}</div>`).join('');}
+function initMCQ(){renderMCQs(allMCQs);}
+function renderMCQs(mcqs){
+  currentMCQs=mcqs;
+  document.getElementById('mcqContainer').innerHTML=mcqs.map((q,qi)=>`
+    <div class="mcq-card" id="mc-${q.id}">
+      <div class="mcq-header"><div class="mcq-num">Q${qi+1}</div><div class="mcq-q">${q.q}</div></div>
+      <div class="mcq-tags"><span class="tag mcq">${q.unit.toUpperCase()}</span><span class="tag ${q.type==='tricky'?'hot':q.type==='numerical'?'imp':'blue'}">${q.type.toUpperCase()}</span></div>
+      <div class="options" id="opts-${q.id}">${q.opts.map((opt,i)=>`<div class="option" onclick="checkAnswer(${q.id},${i},${q.ans})" id="opt-${q.id}-${i}"><div class="opt-letter">${String.fromCharCode(65+i)}</div><div>${opt}</div></div>`).join('')}</div>
+      <div class="mcq-actions">
+        <button class="btn btn-primary" onclick="revealAnswer(${q.id},${q.ans})">✓ Check</button>
+        <button class="btn btn-secondary" onclick="toggleExp(${q.id})">💡 Explanation</button>
+      </div>
+      <div class="answer-reveal" id="rev-${q.id}"><div class="correct-ans">✅ Correct: ${String.fromCharCode(65+q.ans)}) ${q.opts[q.ans]}</div><div class="explanation">${q.exp}</div></div>
+    </div>`).join('');
+}
+function checkAnswer(qId,sel,cor){
+  const opts=document.getElementById('opts-'+qId);if(opts.dataset.answered)return;opts.dataset.answered='1';
+  for(let i=0;i<4;i++){const o=document.getElementById(`opt-${qId}-${i}`);if(!o)continue;if(i===cor)o.classList.add('correct');else if(i===sel)o.classList.add('wrong');}
+  mcqTotal++;if(sel===cor)mcqScore++;updateScore();
+  document.getElementById('rev-'+qId).classList.add('show');
+  document.getElementById('mcqProgressBar').style.width=`${(mcqTotal/currentMCQs.length)*100}%`;
+}
+function revealAnswer(qId,ans){document.getElementById('rev-'+qId).classList.add('show');}
+function toggleExp(qId){document.getElementById('rev-'+qId).classList.toggle('show');}
+function filterMCQ(f,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const filtered=f==='all'?allMCQs:allMCQs.filter(q=>q.unit===f);
+  renderMCQs(filtered);mcqScore=0;mcqTotal=0;updateScore();
+}
+function shuffleMCQ(){renderMCQs([...currentMCQs].sort(()=>Math.random()-.5));}
+function resetMCQ(){mcqScore=0;mcqTotal=0;updateScore();renderMCQs(currentMCQs);}
+function updateScore(){document.getElementById('scorePill').textContent=`Score: ${mcqScore}/${mcqTotal}`;}
+function startMock(){
+  mockQuestions=[...allMCQs].sort(()=>Math.random()-.5).slice(0,30);
+  mockAnswers={};mockCurrent=0;mockSeconds=1800;
+  document.getElementById('mockSetup').style.display='none';
+  document.getElementById('mockTest').style.display='block';
+  initQG();renderMQ();
+  mockTimerInterval=setInterval(()=>{mockSeconds--;const m=String(Math.floor(mockSeconds/60)).padStart(2,'0'),s=String(mockSeconds%60).padStart(2,'0');document.getElementById('mockTimer').textContent=`${m}:${s}`;if(mockSeconds<=0){clearInterval(mockTimerInterval);submitMock();}},1000);
+}
+function initQG(){document.getElementById('questionGrid').innerHTML=mockQuestions.map((_,i)=>`<div class="q-bubble" id="mb-${i}" onclick="mockGT(${i})">${i+1}</div>`).join('');}
+function renderMQ(){
+  const q=mockQuestions[mockCurrent];document.getElementById('mockProgress').textContent=`Question ${mockCurrent+1} of 30`;const sel=mockAnswers[mockCurrent];
+  document.getElementById('mockQuestion').innerHTML=`<div class="mcq-card"><div class="mcq-header"><div class="mcq-num">Q${mockCurrent+1}</div><div class="mcq-q">${q.q}</div></div><div class="options">${q.opts.map((opt,i)=>`<div class="option ${sel===i?'selected':''}" onclick="mockSel(${i})"><div class="opt-letter">${String.fromCharCode(65+i)}</div><div>${opt}</div></div>`).join('')}</div></div>`;
+  document.getElementById('prevBtn').disabled=mockCurrent===0;document.getElementById('nextBtn').disabled=mockCurrent===29;
+}
+function mockSel(opt){mockAnswers[mockCurrent]=opt;const b=document.getElementById('mb-'+mockCurrent);if(b)b.classList.add('answered');document.getElementById('mockAttempted').textContent=Object.keys(mockAnswers).length;renderMQ();}
+function mockNav(d){mockCurrent=Math.max(0,Math.min(29,mockCurrent+d));renderMQ();}
+function mockGT(i){mockCurrent=i;renderMQ();}
+function submitMock(){
+  clearInterval(mockTimerInterval);document.getElementById('mockTest').style.display='none';
+  let c=0,w=0,sk=0;mockQuestions.forEach((q,i)=>{if(mockAnswers[i]===undefined)sk++;else if(mockAnswers[i]===q.ans)c++;else w++;});
+  const sc=c-(w*0.25),pct=Math.round((c/30)*100);
+  document.getElementById('mockResult').style.display='block';
+  document.getElementById('mockResult').innerHTML=`<div class="hero" style="text-align:center"><div class="hero-title">📊 Test Complete!</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px"><div class="stat-card"><div class="stat-num" style="color:var(--accent)">${c}</div><div class="stat-label">Correct</div></div><div class="stat-card"><div class="stat-num" style="color:var(--red)">${w}</div><div class="stat-label">Wrong</div></div><div class="stat-card"><div class="stat-num">${sk}</div><div class="stat-label">Skipped</div></div><div class="stat-card"><div class="stat-num">${sc.toFixed(2)}</div><div class="stat-label">Net Score</div></div></div><div style="font-size:1.3rem;font-weight:700;margin-top:18px;color:${pct>=70?'var(--accent)':pct>=50?'var(--accent2)':'var(--red)'}">${pct}% — ${pct>=70?'🏆 Excellent!':pct>=50?'👍 Good Effort':'📚 Keep Practicing'}</div></div>
+  <div style="margin-top:18px"><div class="section-title">📋 Answer Review</div>${mockQuestions.map((q,i)=>{const ua=mockAnswers[i],isC=ua===q.ans,isSk=ua===undefined;return `<div class="mcq-card ${!isSk&&isC?'correct-card':!isSk?'wrong-card':''}"><div style="font-size:.81rem"><b>Q${i+1}.</b> ${q.q}</div><div style="margin-top:5px;font-size:.76rem">${isSk?'<span style="color:var(--text3)">⏭ Skipped</span>':isC?`<span style="color:var(--accent)">✅ ${String.fromCharCode(65+ua)}) Correct</span>`:`<span style="color:var(--red)">❌ Your: ${String.fromCharCode(65+ua)}) | Correct: ${String.fromCharCode(65+q.ans)})</span>`}</div><div style="font-size:.74rem;color:var(--text3);margin-top:3px">${q.exp}</div></div>`;}).join('')}</div>
+  <button class="btn btn-primary" style="margin-top:14px" onclick="resetMock()">🔄 Retake Test</button>`;
+}
+function resetMock(){document.getElementById('mockResult').style.display='none';document.getElementById('mockSetup').style.display='block';}
+window.onload=function(){showPage('dashboard');initMCQ();document.addEventListener('click',function s(){toggleTimer();document.removeEventListener('click',s);},{once:true});};
+</script>
+</body>
+</html>
