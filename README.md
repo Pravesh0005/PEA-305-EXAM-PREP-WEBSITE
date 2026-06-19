@@ -324,17 +324,22 @@ Size:       Single file ~160KB
 ```
 📂 PEA305-Aptitude-ExamPrep/
 │
+|
 ├── 📂 source-materials/
+|
+|
 │   ├── 📂 ppts/
-│   │   ├── 📄 Vedic Maths ppt
-│   │   ├── 📄 Number System ppt
-│   │   ├── 📄 Average ppt
-│   │   ├── 📄 Percentage ppt
-│   │   ├── 📄 Profit Loss ppt
-│   │   ├── 📄 Logical Reasoning ppt
-│   │   ├── 📄 Series ppt
-│   │   ├── 📄 Coding Decoding ppt
-│   │   └── 📄 HCF LCM ppt
+│   │   ├── 📄 Vedic Maths Materials
+│   │   ├── 📄 Number System Materials
+│   │   ├── 📄 Average Materials
+│   │   ├── 📄 Percentage Materials
+│   │   ├── 📄 Profit Loss Materials
+│   │   ├── 📄 Logical Reasoning Materials
+│   │   ├── 📄 Series Materials
+│   │   ├── 📄 Coding Decoding Materials
+│   │   └── 📄 HCF LCM Materials
+|   |
+|   |
 │   └── 📂 other/
 │       └── 📄 PEA305-SYLLABUS.pdf
 |
