@@ -26,8 +26,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&color=36BCF7&center=true&vCenter=true&multiline=true&width=1000&height=150&lines=Professional+Aptitude+Preparation+Platform+%F0%9F%A7%A0;100%2B+MCQs+with+Exam-Focused+Practice+%E2%9A%A1;Vedic+Maths+%7C+Percentages+%7C+P%26L+%7C+Series+%F0%9F%93%9A;Built+to+Boost+Speed%2C+Accuracy+and+Confidence+%F0%9F%8E%AF" />
 </p>
 
-<br/>
-
 <!-- DEMO GIF -->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700"/>
 
